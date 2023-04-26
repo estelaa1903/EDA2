@@ -63,6 +63,13 @@ build CMakeFiles/EDA2.dir/base.c.obj: C_COMPILER__EDA2_Debug C$:/Users/estel/CLi
   OBJECT_DIR = CMakeFiles\EDA2.dir
   OBJECT_FILE_DIR = CMakeFiles\EDA2.dir
 
+build CMakeFiles/EDA2.dir/menu.c.obj: C_COMPILER__EDA2_Debug C$:/Users/estel/CLionProjects/EDA2/menu.c || cmake_object_order_depends_target_EDA2
+  DEP_FILE = CMakeFiles\EDA2.dir\menu.c.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu11
+  INCLUDES = -IC:/Users/estel/CLionProjects/EDA2/.
+  OBJECT_DIR = CMakeFiles\EDA2.dir
+  OBJECT_FILE_DIR = CMakeFiles\EDA2.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target EDA2
@@ -71,7 +78,7 @@ build CMakeFiles/EDA2.dir/base.c.obj: C_COMPILER__EDA2_Debug C$:/Users/estel/CLi
 #############################################
 # Link the executable EDA2.exe
 
-build EDA2.exe: C_EXECUTABLE_LINKER__EDA2_Debug CMakeFiles/EDA2.dir/main.c.obj CMakeFiles/EDA2.dir/base.c.obj
+build EDA2.exe: C_EXECUTABLE_LINKER__EDA2_Debug CMakeFiles/EDA2.dir/main.c.obj CMakeFiles/EDA2.dir/base.c.obj CMakeFiles/EDA2.dir/menu.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\EDA2.dir

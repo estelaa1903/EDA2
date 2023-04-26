@@ -2,10 +2,10 @@
 // Created by estel on 26/04/2023.
 //
 #include <stdio.h>
+#include "menu.h"
 #include "main.h"
 int main() {
-    printf("Hello, World!\n");
-    return 0;
+    show_menu();
 }
 
 
