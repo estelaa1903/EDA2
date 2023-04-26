@@ -1,0 +1,3 @@
+C:/Users/estel/CLionProjects/edaaaaaaaa/cmake-build-debug/CMakeFiles/edaaaaaaaa.dir
+C:/Users/estel/CLionProjects/edaaaaaaaa/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/estel/CLionProjects/edaaaaaaaa/cmake-build-debug/CMakeFiles/rebuild_cache.dir
