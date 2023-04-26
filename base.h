@@ -1,6 +1,4 @@
-//
-// Created by estel on 26/04/2023.
-//
+//Header donde escribimos las bases
 
 #ifndef EDA2_BASE_H
 #define EDA2_BASE_H
