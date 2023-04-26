@@ -4,6 +4,8 @@
 
 #ifndef EDA2_BASE_H
 #define EDA2_BASE_H
+#define MAX_LENGTH 50
+#define MAX_USUARIO 15
 typedef struct {
     char pref1[MAX_LENGTH];
     char pref2[MAX_LENGTH];
