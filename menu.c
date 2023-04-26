@@ -12,3 +12,13 @@ void show_menu(){
     printf("-----------------------------------------\n");
 
 }
+void show_submenu(){
+    printf("-----------------------------------------\n");
+    printf("1. Enviar solicitud de amistad \n");
+    printf("2. Gestionar solicitudes pendientes \n");
+    printf("3. Realizar una publicacion \n");
+    printf("4. Listar publicaciones del usuario \n");
+    printf("5. Volver al menu principal \n");
+    printf("-----------------------------------------\n");
+
+}

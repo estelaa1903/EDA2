@@ -6,6 +6,7 @@
 #include "main.h"
 int main() {
     show_menu();
+    show_submenu();
 }
 
 

@@ -6,4 +6,5 @@
 #define EDA2_MENU_H
 #include "stdio.h"
 void show_menu();
+void show_submenu();
 #endif //EDA2_MENU_H
