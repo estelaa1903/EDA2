@@ -128,6 +128,30 @@ EDA2/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\EDA2.dir\build.make CMakeFiles/EDA2.dir/build
 .PHONY : EDA2/fast
 
+base.obj: base.c.obj
+.PHONY : base.obj
+
+# target to build an object file
+base.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EDA2.dir\build.make CMakeFiles/EDA2.dir/base.c.obj
+.PHONY : base.c.obj
+
+base.i: base.c.i
+.PHONY : base.i
+
+# target to preprocess a source file
+base.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EDA2.dir\build.make CMakeFiles/EDA2.dir/base.c.i
+.PHONY : base.c.i
+
+base.s: base.c.s
+.PHONY : base.s
+
+# target to generate assembly for a file
+base.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EDA2.dir\build.make CMakeFiles/EDA2.dir/base.c.s
+.PHONY : base.c.s
+
 main.obj: main.c.obj
 .PHONY : main.obj
 
@@ -161,6 +185,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... EDA2
+	@echo ... base.obj
+	@echo ... base.i
+	@echo ... base.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

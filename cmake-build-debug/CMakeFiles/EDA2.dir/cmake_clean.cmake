@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/EDA2.dir/base.c.obj"
+  "CMakeFiles/EDA2.dir/base.c.obj.d"
   "CMakeFiles/EDA2.dir/main.c.obj"
   "CMakeFiles/EDA2.dir/main.c.obj.d"
   "EDA2.exe"

@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "C:/Users/alexs/CLionProjects/EDA2/base.c" "CMakeFiles/EDA2.dir/base.c.obj" "gcc" "CMakeFiles/EDA2.dir/base.c.obj.d"
   "C:/Users/alexs/CLionProjects/EDA2/main.c" "CMakeFiles/EDA2.dir/main.c.obj" "gcc" "CMakeFiles/EDA2.dir/main.c.obj.d"
   )
 

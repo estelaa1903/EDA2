@@ -78,6 +78,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/alexs/CLionProjects/EDA2/base.c">
+			<Option target="EDA2"/>
+		</Unit>
+		<Unit filename="C:/Users/alexs/CLionProjects/EDA2/base.h">
+			<Option target="EDA2"/>
+		</Unit>
 		<Unit filename="C:/Users/alexs/CLionProjects/EDA2/main.c">
 			<Option target="EDA2"/>
 		</Unit>

@@ -39,11 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "EDA2::@6890427a1f51a3e7e1df",
-<<<<<<<< HEAD:cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-80b0af85bca5d57e13d3.json
-					"jsonFile" : "target-EDA2-Debug-fa3dfbea80b1ee32d616.json",
-========
-					"jsonFile" : "target-EDA2-Debug-b468f6058a871c1f35ab.json",
->>>>>>>> origin/main:cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-f74112a3a21aa99a5b79.json
+					"jsonFile" : "target-EDA2-Debug-564fff694988c39df969.json",
 					"name" : "EDA2",
 					"projectIndex" : 0
 				}

@@ -7,4 +7,4 @@ include_directories(.)
 
 add_executable(EDA2
         main.c
-        main.h)
+        main.h base.c)
