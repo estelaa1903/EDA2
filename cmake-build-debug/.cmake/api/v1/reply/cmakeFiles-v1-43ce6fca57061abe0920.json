@@ -21,6 +21,11 @@
 		{
 			"isCMake" : true,
 			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2022.3.1/bin/cmake/win/share/cmake-3.24/Modules/CMakeMinGWFindMake.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
 			"path" : "C:/Program Files/JetBrains/CLion 2022.3.1/bin/cmake/win/share/cmake-3.24/Modules/CMakeSystemSpecificInitialize.cmake"
 		},
 		{
@@ -295,6 +300,21 @@
 		{
 			"isCMake" : true,
 			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2022.3.1/bin/cmake/win/share/cmake-3.24/Modules/CMakeFindCodeBlocks.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2022.3.1/bin/cmake/win/share/cmake-3.24/Modules/CMakeExtraGeneratorDetermineCompilerMacrosAndIncludeDirs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2022.3.1/bin/cmake/win/share/cmake-3.24/Modules/ProcessorCount.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
 			"path" : "C:/Program Files/JetBrains/CLion 2022.3.1/bin/cmake/win/share/cmake-3.24/Modules/CMakeCInformation.cmake"
 		},
 		{
@@ -429,8 +449,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "C:/Users/estel/CLionProjects/EDA2/cmake-build-debug",
-		"source" : "C:/Users/estel/CLionProjects/EDA2"
+		"build" : "C:/Users/alexs/CLionProjects/EDA2/cmake-build-debug",
+		"source" : "C:/Users/alexs/CLionProjects/EDA2"
 	},
 	"version" : 
 	{
