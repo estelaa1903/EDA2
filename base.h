@@ -33,6 +33,7 @@ typedef struct{
     usuario user;
     struct List_Users *next;
     struct List_Users *prev;
+    int numusers;
 }List_Users;
 
 #endif //EDA2_BASE_H

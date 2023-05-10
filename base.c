@@ -6,6 +6,7 @@
 
 void new_usuario(){
     usuario us;
+    List_Users l;
     int n;
     char usu[MAX_USUARIO], larg[MAX_LENGTH];
     printf("¿Cual es su nombre de usuario? (MAX. 15)");
@@ -45,12 +46,18 @@ void new_usuario(){
     scanf("%s",&larg);
     strcpy(us.pref.pref5, larg);
 
+    l.numusers+=1;
+
 }
 void new_lista(usuario, List_Users){
 
 
 }
 int lista(){}
-void listar(){
+void listar(List_Users ){
+    List_Users l;
+for(int i=0;i<l.numusers; i++){
+    printf("%s", l.user.nombre)
 
+}
 }

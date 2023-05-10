@@ -5,6 +5,8 @@
 #include "menu.h"
 #include "main.h"
 int main() {
+    List_Users l;
+    l.numusers=0;
     show_menu();
     show_submenu();
 }
