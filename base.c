@@ -47,12 +47,17 @@ List_Users new_usuario(){
     return l;
 }
 void new_lista(usuario, List_Users){
-
-
+    List_Users *memoria;
+    memoria=malloc(sizeof(List_Users));
+    memoria->next=NULL;
+    memoria->prev=NULL;
+    memoria->reseved_mem
 }
-int lista(){}
+int lista(){
+    realloc(memoria*)
+}
 
-void listar(List_Users *l ){
+void listar(List_Users l ){
 
 for(int i=0;i<l.numusers; i++){
     printf("%s", l.user.nombre);

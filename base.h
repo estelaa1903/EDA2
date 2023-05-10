@@ -31,10 +31,11 @@ typedef struct{
     struct List_Users *next;
     struct List_Users *prev;
     int numusers;
+    int reseved_mem;
 }List_Users;
 
 List_Users new_usuario();
-void listar(List_Users *l);
+void listar(List_Users l);
 void new_lista(usuario, List_Users);
 int lista();
 #endif //EDA2_BASE_H
