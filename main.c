@@ -11,10 +11,14 @@ int main() {
     do {
         show_menu();
         opcion= comprobarm();
-        if (op!=4){
-            op=elegirm(opcion);
+        op=elegirm(opcion, l);
 
-        }
+
+
+
+
+
     }while(op!=1);
+    return 0;
 }
 
