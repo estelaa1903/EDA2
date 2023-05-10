@@ -55,6 +55,7 @@ void new_lista(usuario, List_Users){
 }
 int lista(usuario, List_Users){
     List_Users *memoria;
+    memoria->reseved_mem+=1;
     realloc(memoria,sizeof(List_Users)*memoria->reseved_mem);
 
 }
