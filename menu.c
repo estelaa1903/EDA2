@@ -22,16 +22,19 @@ void show_submenu(){
     printf("-----------------------------------------\n");
 
 }
-int elegirm(int opcion){
+int elegirm(int opcion, List_Users l){
+    int subm;
     if(opcion==1){
         new_usuario();
         return 0;
     }
     else if(opcion==2){
-        listar(List_Users l) ;
+        listar(l) ;
         return 0;
     }else if(opcion==3){
         show_submenu();
+        subm=comprobarsm();
+        elegirsm(subm);
         return 0;
     }else if(opcion==4){
         return 1;
@@ -64,8 +67,11 @@ void elegirsm(int opcion){
 }
 int comprobarsm(){
     int opcion;
+    printf("Elige una opcion: (1-5)");
+    scanf("%d", &opcion);
     while (opcion != 1 && opcion != 2 && opcion != 3 && opcion != 4 && opcion != 5) {
         printf("Opcion erronea\nElige otra opcion: (1-5)\n");
         scanf("%d", &opcion);
     }
+    return  opcion;
 }
