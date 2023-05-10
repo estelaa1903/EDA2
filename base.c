@@ -51,10 +51,12 @@ void new_lista(usuario, List_Users){
     memoria=malloc(sizeof(List_Users));
     memoria->next=NULL;
     memoria->prev=NULL;
-    memoria->reseved_mem
+    memoria->reseved_mem;
 }
-int lista(){
-    realloc(memoria*)
+int lista(usuario, List_Users){
+    List_Users *memoria;
+    realloc(memoria,sizeof(List_Users)*);
+
 }
 
 void listar(List_Users l ){
