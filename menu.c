@@ -24,9 +24,11 @@ void show_submenu(){
 }
 int elegirm(int opcion){
     if(opcion==1){
+        new_usuario();
         return 0;
     }
     else if(opcion==2){
+        listar(List_Users l) ;
         return 0;
     }else if(opcion==3){
         show_submenu();

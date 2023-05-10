@@ -7,7 +7,7 @@
 int main() {
     List_Users l;
     l.numusers=0;
-   int op, opcion;
+    int op, opcion;
     do {
         show_menu();
         opcion= comprobarm();
@@ -17,5 +17,4 @@ int main() {
         }
     }while(op!=1);
 }
-
 

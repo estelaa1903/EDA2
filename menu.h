@@ -5,6 +5,7 @@
 #ifndef EDA2_MENU_H
 #define EDA2_MENU_H
 #include "stdio.h"
+#include "base.h"
 void show_menu();
 void show_submenu();
 int elegirm(int opcion);

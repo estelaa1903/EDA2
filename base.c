@@ -54,10 +54,10 @@ void new_lista(usuario, List_Users){
 
 }
 int lista(){}
-void listar(List_Users ){
-    List_Users l;
+void listar(List_Users l ){
+
 for(int i=0;i<l.numusers; i++){
-    printf("%s", l.user.nombre)
+    printf("%s", l.user.nombre);
 
 }
 }

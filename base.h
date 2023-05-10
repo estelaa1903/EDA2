@@ -9,10 +9,7 @@
 #include "string.h"
 /*La función de new_usuario es la que guarda, según la estructura usuario, la información de un nuevo
  cliente, no devuelve nada. */
-void new_usuario();
-void listar();
-void new_lista();
-int lista();
+
 typedef struct {
     char pref1[MAX_LENGTH];
     char pref2[MAX_LENGTH];
@@ -36,4 +33,8 @@ typedef struct{
     int numusers;
 }List_Users;
 
+void new_usuario();
+void listar(List_Users l);
+void new_lista(usuario, List_Users);
+int lista();
 #endif //EDA2_BASE_H
