@@ -33,8 +33,8 @@ typedef struct{
     int numusers;
 }List_Users;
 
-void new_usuario();
-void listar(List_Users l);
+List_Users new_usuario();
+void listar(List_Users *l);
 void new_lista(usuario, List_Users);
 int lista();
 #endif //EDA2_BASE_H

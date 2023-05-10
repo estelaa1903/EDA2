@@ -4,57 +4,55 @@
 
 #include "base.h"
 
-void new_usuario(){
-    usuario us;
+List_Users new_usuario(){
     List_Users l;
     int n;
     char usu[MAX_USUARIO], larg[MAX_LENGTH];
     printf("¿Cual es su nombre de usuario? (MAX. 15)");
     scanf("%s", &usu);
-    strcpy(us.nombre, usu);
+    strcpy(l.user.nombre, usu);
 
     printf("¿Cual es su edad?");
-    scanf("%d", &n);
-    us.edad=n;
+    scanf("%d", &l.user.edad);
 
     printf("¿Cual es su correo electronico? (MAX. 50)");
     scanf("%s", &larg);
-    strcpy(us.correo, larg);
+    strcpy(l.user.correo, larg);
 
     printf("¿Cual es su Ciudad? (MAX. 50)");
     scanf("%s", &larg);
-    strcpy(us.ubi, larg);
+    strcpy(l.user.ubi, larg);
 
     printf("Liste 5 preferencias:");
     printf("\nNum. 1:");
     scanf("%s",&larg);
-    strcpy(us.pref.pref1, larg);
+    strcpy(l.user.pref.pref1, larg);
 
     printf("\nNum. 2:");
     scanf("%s",&larg);
-    strcpy(us.pref.pref2, larg);
+    strcpy(l.user.pref.pref2, larg);
 
     printf("\nNum. 3:");
     scanf("%s",&larg);
-    strcpy(us.pref.pref3, larg);
+    strcpy(l.user.pref.pref3, larg);
 
     printf("Num. 4:");
     scanf("%s",&larg);
-    strcpy(us.pref.pref4, larg);
+    strcpy(l.user.pref.pref4, larg);
 
     printf("Num. 5:");
     scanf("%s",&larg);
-    strcpy(us.pref.pref5, larg);
-
+    strcpy(l.user.pref.pref5, larg);
     l.numusers+=1;
-
+    return l;
 }
 void new_lista(usuario, List_Users){
 
 
 }
 int lista(){}
-void listar(List_Users l ){
+
+void listar(List_Users *l ){
 
 for(int i=0;i<l.numusers; i++){
     printf("%s", l.user.nombre);
