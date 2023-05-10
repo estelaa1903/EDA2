@@ -90,6 +90,12 @@
 		<Unit filename="C:/Users/alexs/CLionProjects/EDA2/main.h">
 			<Option target="EDA2"/>
 		</Unit>
+		<Unit filename="C:/Users/alexs/CLionProjects/EDA2/menu.c">
+			<Option target="EDA2"/>
+		</Unit>
+		<Unit filename="C:/Users/alexs/CLionProjects/EDA2/menu.h">
+			<Option target="EDA2"/>
+		</Unit>
 		<Unit filename="C:/Users/alexs/CLionProjects/EDA2/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

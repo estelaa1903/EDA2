@@ -7,4 +7,9 @@
 #include "stdio.h"
 void show_menu();
 void show_submenu();
+int elegirm(int opcion);
+int elegirsm(int opcion);
+int comprobarm();
+int comprobarsm();
+
 #endif //EDA2_MENU_H

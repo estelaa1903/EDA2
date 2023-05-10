@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/alexs/CLionProjects/EDA2/base.c" "CMakeFiles/EDA2.dir/base.c.obj" "gcc" "CMakeFiles/EDA2.dir/base.c.obj.d"
   "C:/Users/alexs/CLionProjects/EDA2/main.c" "CMakeFiles/EDA2.dir/main.c.obj" "gcc" "CMakeFiles/EDA2.dir/main.c.obj.d"
+  "C:/Users/alexs/CLionProjects/EDA2/menu.c" "CMakeFiles/EDA2.dir/menu.c.obj" "gcc" "CMakeFiles/EDA2.dir/menu.c.obj.d"
   )
 
 # Targets to which this target links.

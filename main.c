@@ -7,8 +7,15 @@
 int main() {
     List_Users l;
     l.numusers=0;
-    show_menu();
-    show_submenu();
+   int op, opcion;
+    do {
+        show_menu();
+        opcion= comprobarm();
+        if (op!=4){
+            op=elegirm(opcion);
+
+        }
+    }while(op!=1);
 }
 
 

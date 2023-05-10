@@ -22,3 +22,48 @@ void show_submenu(){
     printf("-----------------------------------------\n");
 
 }
+int elegirm(int opcion){
+    if(opcion==1){
+        return 0;
+    }
+    else if(opcion==2){
+        return 0;
+    }else if(opcion==3){
+        show_submenu();
+        return 0;
+    }else if(opcion==4){
+        return 1;
+    }
+    }
+
+int comprobarm(){
+    int opcion;
+    printf("Elige una opcion: (1-4)\n");
+    scanf("%d", &opcion);
+    while (opcion != 1 && opcion != 2 && opcion != 3 && opcion != 4) {
+        printf("Opcion erronea\nElige otra opcion: (1-4)\n");
+        scanf("%d", &opcion);
+    }
+    return opcion;
+}
+
+void elegirsm(int opcion){
+    if(opcion==1){
+
+    }
+    else if(opcion==2){
+
+    }else if(opcion==3){
+
+    }else if(opcion==4){
+        show_menu();
+        comprobarm(opcion);
+    }
+}
+int comprobarsm(){
+    int opcion;
+    while (opcion != 1 && opcion != 2 && opcion != 3 && opcion != 4 && opcion != 5) {
+        printf("Opcion erronea\nElige otra opcion: (1-5)\n");
+        scanf("%d", &opcion);
+    }
+}
