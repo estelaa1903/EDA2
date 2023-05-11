@@ -6,7 +6,6 @@
 
 List_Users new_usuario(){
     List_Users l;
-    int n;
     char usu[MAX_USUARIO], larg[MAX_LENGTH];
     printf("¿Cual es su nombre de usuario? (MAX. 15)");
     scanf("%s", &usu);
@@ -43,15 +42,13 @@ List_Users new_usuario(){
     printf("Num. 5:");
     scanf("%s",&larg);
     strcpy(l.user.pref.pref5, larg);
-    l.total_users++;
     return l;
 }
-void new_lista(usuario  user){ //funcion que añade un usuario
-    List_Users *new_user = (List_Users*)malloc(sizeof(List_Users));
-    new_user->user=user;
+ List_Users* new_lista(List_Users *new_user){ //funcion que añade un usuario
+    new_user = (List_Users*)malloc(sizeof(List_Users));
     new_user->next=NULL;
     new_user->prev= NULL;
-    if(list==NULL){
+    if(lijst==NULL){
         list=new_user;
     }
     else {
@@ -62,9 +59,7 @@ void new_lista(usuario  user){ //funcion que añade un usuario
         current->next= new_user;
         new_user->prev= current;
     }
-
-
-
+     l.total_users++;
 }
 
 void listar(List_Users l ){

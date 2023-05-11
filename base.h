@@ -37,6 +37,6 @@ List_Users *list= NULL; //inicializar la lista
 
 List_Users new_usuario();
 void listar(List_Users l);
-void new_lista();
+List_Users* new_lista();
 int lista(usuario);
 #endif //EDA2_BASE_H
