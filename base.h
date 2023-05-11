@@ -30,12 +30,13 @@ typedef struct{
     usuario user;
     struct List_Users *next;
     struct List_Users *prev;
-    int numusers;
-    int reseved_mem;
+    int total_users;
 }List_Users;
+List_Users *list= NULL; //inicializar la lista
+
 
 List_Users new_usuario();
 void listar(List_Users l);
-List_Users new_lista();
+void new_lista();
 int lista(usuario);
 #endif //EDA2_BASE_H

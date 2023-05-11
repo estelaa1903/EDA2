@@ -43,23 +43,30 @@ List_Users new_usuario(){
     printf("Num. 5:");
     scanf("%s",&larg);
     strcpy(l.user.pref.pref5, larg);
-    l.numusers+=1;
+    l.total_users++;
     return l;
 }
-List_Users new_lista(){
-    List_Users *memoria;
-    memoria=malloc(sizeof(List_Users));
-    memoria->next=NULL;
-    memoria->prev=NULL;
-    memoria->reseved_mem=1;
-    return *memoria;
-}
-int lista(usuario){
-    List_Users *memoria;
-    memoria->reseved_mem+=1;
-    realloc(memoria,sizeof(List_Users)*memoria->reseved_mem);
+void new_lista(usuario  user){ //funcion que añade un usuario
+    List_Users *new_user = (List_Users*)malloc(sizeof(List_Users));
+    new_user->user=user;
+    new_user->next=NULL;
+    new_user->prev= NULL;
+    if(list==NULL){
+        list=new_user;
+    }
+    else {
+        List_Users *current= lista;
+        while (current->next!=NULL){
+            current=current->next;
+        }
+        current->next= new_user;
+        new_user->prev= current;
+    }
+
+
 
 }
+
 void listar(List_Users l ){
 
 for(int i=0;i<l.numusers; i++){
