@@ -46,20 +46,20 @@ List_Users new_usuario(){
     l.numusers+=1;
     return l;
 }
-void new_lista(usuario, List_Users){
+List_Users new_lista(){
     List_Users *memoria;
     memoria=malloc(sizeof(List_Users));
     memoria->next=NULL;
     memoria->prev=NULL;
     memoria->reseved_mem=1;
+    return *memoria;
 }
-int lista(usuario, List_Users){
+int lista(usuario){
     List_Users *memoria;
     memoria->reseved_mem+=1;
     realloc(memoria,sizeof(List_Users)*memoria->reseved_mem);
 
 }
-
 void listar(List_Users l ){
 
 for(int i=0;i<l.numusers; i++){

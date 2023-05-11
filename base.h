@@ -36,6 +36,6 @@ typedef struct{
 
 List_Users new_usuario();
 void listar(List_Users l);
-void new_lista(usuario, List_Users);
-int lista();
+List_Users new_lista();
+int lista(usuario);
 #endif //EDA2_BASE_H
