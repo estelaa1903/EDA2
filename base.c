@@ -44,12 +44,14 @@ List_Users new_usuario(){
     strcpy(l.user.pref.pref5, larg);
     return l;
 }
- List_Users* new_lista(List_Users *new_user){ //funcion que añade un usuario
-    new_user = (List_Users*)malloc(sizeof(List_Users));
-    new_user->next=NULL;
-    new_user->prev= NULL;
-    if(lijst==NULL){
-        list=new_user;
+ List_Users* new_lista(usuario new_user){ //funcion que añade un usuario
+    List_Users *new_list = (List_Users*)malloc(sizeof(List_Users));
+    new_list->user=new_user;
+    new_list->next=NULL;
+    new_list->prev= NULL;
+     if(new_list==NULL){
+         list=new_user;
+    new_user;
     }
     else {
         List_Users *current= lista;

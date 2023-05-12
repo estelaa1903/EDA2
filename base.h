@@ -32,7 +32,7 @@ typedef struct{
     struct List_Users *prev;
     int total_users;
 }List_Users;
-List_Users *list= NULL; //inicializar la lista
+List_Users list= NULL; //inicializar la lista
 
 
 List_Users new_usuario();
