@@ -26,8 +26,8 @@ void show_submenu(){
 }
 int elegirm(int opcion, List_Users *l){
     int subm;
+    usuario u;
     if(opcion==1){
-        usuario u;
         u=new_usuario();
         new_lista(u,l);
         return 0;
@@ -36,9 +36,10 @@ int elegirm(int opcion, List_Users *l){
         listar(l);
         return 0;
     }else if(opcion==3){
+        u=busqueda(l);
         show_submenu();
         subm=comprobarsm();
-        elegirsm(subm);
+        elegirsm(subm, u);
         return 0;
     }else if(opcion==4){
         return 1;
@@ -56,7 +57,7 @@ int comprobarm(){
     return opcion;
 }
 
-void elegirsm(int opcion){// elegir opcion submenu
+void elegirsm(int opcion, usuario u){// elegir opcion submenu
     if(opcion==1){
 
     }

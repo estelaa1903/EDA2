@@ -9,7 +9,7 @@
 void show_menu();
 void show_submenu();
 int elegirm(int opcion, List_Users *l);
-void elegirsm(int opcion);
+void elegirsm(int opcion, usuario u);
 int comprobarm();
 int comprobarsm();
 

@@ -67,7 +67,7 @@ void listar(List_Users *l ){ //print users
     }
 }
 
-void busqueda(List_Users *l){
+usuario busqueda(List_Users *l){ // buscar usuario lo retorna para operar con el.
     char nombre[MAX_USUARIO];
     int si=1;
     scanf("%s",&nombre);
@@ -75,5 +75,5 @@ void busqueda(List_Users *l){
         si=strcmp(nombre,l->user.nombre);
         l = l->next;
     }
-
+    return l->user;
 }
