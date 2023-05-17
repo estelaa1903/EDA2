@@ -60,10 +60,20 @@ usuario new_usuario(){
      l->total_users++;//
 }
 
-void listar(List_Users l ){
-
-for(int i=0;i<l.numusers; i++){
-    printf("%s", l.user.nombre);
-
+void listar(List_Users *l ){ //print users
+    for(int i=0;i<l->total_users; i++) {
+        printf("%s", l->user.nombre);
+        l = l->next;
+    }
 }
+
+void busqueda(List_Users *l){
+    char nombre[MAX_USUARIO];
+    int si=1;
+    scanf("%s",&nombre);
+    while(si!=0) {
+        si=strcmp(nombre,l->user.nombre);
+        l = l->next;
+    }
+
 }

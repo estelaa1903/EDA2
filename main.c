@@ -5,7 +5,7 @@
 #include "menu.h"
 #include "main.h"
 int main() {
-    List_Users *l;
+
     l->total_users=0;
     int op, opcion;
     do {

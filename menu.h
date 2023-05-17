@@ -8,7 +8,7 @@
 #include "base.h"
 void show_menu();
 void show_submenu();
-int elegirm(int opcion, List_Users l);
+int elegirm(int opcion, List_Users *l);
 void elegirsm(int opcion);
 int comprobarm();
 int comprobarsm();

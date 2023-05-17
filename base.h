@@ -24,6 +24,7 @@ typedef struct {
     char correo[MAX_LENGTH];
     char ubi[MAX_LENGTH];
     gustos pref;
+
 }usuario;
 
 typedef struct{
@@ -33,7 +34,10 @@ typedef struct{
 }List_Users;
 
 usuario new_usuario();
-void listar(List_Users l);
-List_Users* new_lista();
+void listar(List_Users *l);
+List_Users* new_lista(usuario new_user,List_Users *l);
 int lista(usuario);
+void busqueda(List_Users *l);
+
+
 #endif //EDA2_BASE_H

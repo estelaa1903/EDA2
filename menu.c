@@ -3,6 +3,8 @@
 //
 
 #include "menu.h"
+#include "main.h"
+
 void show_menu(){
     printf("-----------------------------------------\n");
     printf("1. Introduce el usuario \n");
@@ -22,14 +24,16 @@ void show_submenu(){
     printf("-----------------------------------------\n");
 
 }
-int elegirm(int opcion, List_Users l){
+int elegirm(int opcion, List_Users *l){
     int subm;
     if(opcion==1){
-        new_usuario();
+        usuario u;
+        u=new_usuario();
+        new_lista(u,l);
         return 0;
     }
     else if(opcion==2){
-        listar(l) ;
+        listar(l);
         return 0;
     }else if(opcion==3){
         show_submenu();
@@ -52,7 +56,7 @@ int comprobarm(){
     return opcion;
 }
 
-void elegirsm(int opcion){
+void elegirsm(int opcion){// elegir opcion submenu
     if(opcion==1){
 
     }
@@ -60,9 +64,9 @@ void elegirsm(int opcion){
 
     }else if(opcion==3){
 
+
     }else if(opcion==4){
-        show_menu();
-        comprobarm(opcion);
+
     }
 }
 int comprobarsm(){
