@@ -1,7 +1,7 @@
 //
 //
 //
-
+#include "main.h"
 #include "base.h"
 
 usuario new_usuario(){
@@ -44,7 +44,7 @@ usuario new_usuario(){
     strcpy(user.pref.pref5, larg);
     return user;
 }
- List_Users* new_lista(usuario new_user,List_Users *l){ //añadir al main
+ void new_lista(usuario new_user,List_Users *l){ //añadir al main
     List_Users *new_list = (List_Users*)malloc(sizeof(List_Users));
     new_list->user=new_user;
     new_list->next=NULL;
@@ -76,4 +76,35 @@ usuario busqueda(List_Users *l){ // buscar usuario lo retorna para operar con el
         l = l->next;
     }
     return l->user;
+}
+
+int leer_archivo(){
+    FILE* archivo= fopen("Users.csv","r");
+    if(archivo==NULL){
+        printf("Hubo un error en abrir al archivo");
+        return 1;
+    }
+    char linea[1024];
+    while(fgets(linea,sizeof(linea),"Users.csv")){
+        usuario user;
+        char *campo =strtok(linea,",");
+        campo = strtok(NULL,",");
+        user.edad= atoi(campo);
+    }
+    fclose(archivo);
+}
+
+int leer_archivo_mi_forma_xd(){
+    FILE * archivo=fopen("Users.csv","r");
+    if(archivo= NULL){
+        printf("No se pudo abrir el archivo");
+        return 1;
+    }
+    usuario new_user;
+    while(!feof(archivo)){
+        fscanf(archivo,"%s, %d, %s, %s, %s, %s, %s, %s, %s",new_user.nombre,new_user.edad,new_user.correo,new_user.ubi,new_user.pref.pref1, new_user.pref.pref2, new_user.pref.pref3, new_user.pref.pref4, new_user.pref.pref5);
+        new_lista(new_user,*l);
+    }
+
+
 }

@@ -35,7 +35,7 @@ typedef struct{
 
 usuario new_usuario();
 void listar(List_Users *l);
-List_Users* new_lista(usuario new_user,List_Users *l);
+void new_lista(usuario new_user,List_Users *l);
 int lista(usuario);
 usuario busqueda(List_Users *l);
 
