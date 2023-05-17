@@ -29,11 +29,8 @@ typedef struct {
 typedef struct{
     usuario user;
     struct List_Users *next;
-    struct List_Users *prev;
     int total_users;
 }List_Users;
-List_Users list= NULL; //inicializar la lista
-
 
 usuario new_usuario();
 void listar(List_Users l);

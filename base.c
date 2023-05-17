@@ -44,24 +44,20 @@ usuario new_usuario(){
     strcpy(user.pref.pref5, larg);
     return user;
 }
- List_Users* new_lista(usuario new_user){ //funcion que añade un usuario
+ List_Users* new_lista(usuario new_user,List_Users *l){ //añadir al main
     List_Users *new_list = (List_Users*)malloc(sizeof(List_Users));
     new_list->user=new_user;
     new_list->next=NULL;
-    new_list->prev= NULL;
-     if(new_list==NULL){
-         list=new_user;
-    new_user;
+     if(l->total_users==0){
+         l = new_list;
     }
     else {
-        List_Users *current= lista;
-        while (current->next!=NULL){
-            current=current->next;
+        while (l->next!=NULL){
+            l= l->next;
         }
-        current->next= new_user;
-        new_user->prev= current;
+        l->next= new_list;
     }
-     l.total_users++;
+     l->total_users++;
 }
 
 void listar(List_Users l ){
