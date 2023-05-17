@@ -35,7 +35,7 @@ typedef struct{
 List_Users list= NULL; //inicializar la lista
 
 
-List_Users new_usuario();
+usuario new_usuario();
 void listar(List_Users l);
 List_Users* new_lista();
 int lista(usuario);
