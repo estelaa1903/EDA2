@@ -57,7 +57,7 @@ usuario new_usuario(){
         }
         l->next= new_list;
     }
-     l->total_users++;
+     l->total_users++;//
 }
 
 void listar(List_Users l ){
