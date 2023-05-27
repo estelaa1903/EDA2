@@ -95,6 +95,7 @@ int leer_archivo(){
 }
 
 int leer_archivo_mi_forma_xd(){
+    List_Users *l;
     FILE * archivo=fopen("Users.csv","r");
     if(archivo= NULL){
         printf("No se pudo abrir el archivo");
@@ -103,7 +104,7 @@ int leer_archivo_mi_forma_xd(){
     usuario new_user;
     while(!feof(archivo)){
         fscanf(archivo,"%s, %d, %s, %s, %s, %s, %s, %s, %s",new_user.nombre,new_user.edad,new_user.correo,new_user.ubi,new_user.pref.pref1, new_user.pref.pref2, new_user.pref.pref3, new_user.pref.pref4, new_user.pref.pref5);
-        new_lista(new_user,*l);
+        new_lista(new_user,l);
     }
 
 
