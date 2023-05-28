@@ -8,7 +8,7 @@
 int main() {
     List_Users *l;
     l->total_users=0;
-    int op, opcion;
+    int op=0, opcion;
     do {
         show_menu();
         opcion= comprobarm();
