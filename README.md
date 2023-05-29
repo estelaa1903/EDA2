@@ -18,7 +18,7 @@ Información sobre TÍTULO DE PROYECTO
 
 
 Alex Alastuey Centeno, Estela Callejón Molina, Marc Cano
-NIA: ____, 266667, _____
+NIA: 268167, 266667, _____
 11 de junio 2023
 
 
