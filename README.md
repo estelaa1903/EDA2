@@ -31,6 +31,7 @@ NIA: ____, 266667, _____
 
 PLANTILLA DE MEMORIA DE PROYECTO [Máximo 5000 palabras en total]
 LISTA DE CONTENIDOS [Incluir todas las secciones que se detallan a continuación]
+
 INTRODUCCIÓN [Aprox.  250 palabras]
 En esta sección se debe describir el contexto, la definición del problema, las soluciones existentes que habéis revisado en busca de inspiración, su propuesta y los objetivos alcanzados.
 
