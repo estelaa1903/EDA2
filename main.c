@@ -6,15 +6,17 @@
 #include "base.h"
 #include "main.h"
 int main() {
-    List_Users *l;
-    usuario u ;//= new_usuario();
-   //l->total_users=0;
+    List_Users *li ;
+    li=NULL;
+    usuario u;
+    li->total_users=0;
     int op=0, opcion;
     do {
-        new_lista(u,l);
+
+        new_lista(u,li);
         show_menu();
         opcion= comprobarm();
-        op=elegirm(opcion, l);
+        op=elegirm(opcion, li);
 
 
 
