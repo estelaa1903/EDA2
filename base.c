@@ -78,7 +78,7 @@ void listar(List_Users *l ){ //print users
 
 void op_usuario(List_Users *l){
     char nombre_usuario[MAX_USUARIO];
-    printf("Ingrese el nombre de usuario del usuario específico: ");
+    printf("Ingresa el nombre del usuario ");
     scanf("%s", nombre_usuario);
 }
 /*int busqueda(List_Users *l,char nombre[MAX_USUARIO]){ // buscar usuario
