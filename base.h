@@ -33,11 +33,12 @@ typedef struct{
     int total_users;
 }List_Users;
 
-usuario new_usuario();
+void new_usuario(List_Users **l);
 void listar(List_Users *l);
-void new_lista(usuario new_user,List_Users *l);
+List_Users* Create_list();
 int lista(usuario);
-usuario busqueda(List_Users *l);
-
+int busqueda(List_Users *l,char nombre[MAX_USUARIO]);
+usuario Select(List_Users *l,char nombre[MAX_USUARIO]);
+void op_usuario(List_Users *l);
 
 #endif //EDA2_BASE_H

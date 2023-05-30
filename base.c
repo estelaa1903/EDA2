@@ -4,8 +4,8 @@
 #include "main.h"
 #include "base.h"
 
-usuario new_usuario(){
-     usuario user;
+void new_usuario(List_Users **l){  //crear nuevo usuario
+    usuario user;
     char usu[MAX_USUARIO], larg[MAX_LENGTH];
     printf("\n-Cual es su nombre de usuario? (MAX. 15)");
     scanf("%s", usu);
@@ -15,70 +15,99 @@ usuario new_usuario(){
     scanf("%d", &user.edad);
 
     printf("\n-Cual es su correo electronico? (MAX. 50)");
-    scanf("%s", &larg);
+    scanf("%s", larg);
     strcpy(user.correo, larg);
 
     printf("\n-Cual es su Ciudad?(MAX. 50)");
-    scanf("%s", &larg);
+    scanf("%s", larg);
     strcpy(user.ubi, larg);
 
     printf("\nListe 5 preferencias:");
     printf("\nNum. 1:");
-    scanf("%s",&larg);
+    scanf("%s",larg);
     strcpy(user.pref.pref1, larg);
 
     printf("\nNum. 2:");
-    scanf("%s",&larg);
+    scanf("%s",larg);
     strcpy(user.pref.pref2, larg);
 
     printf("\nNum. 3:");
-    scanf("%s",&larg);
+    scanf("%s",larg);
     strcpy(user.pref.pref3, larg);
 
     printf("\nNum. 4:");
-    scanf("%s",&larg);
+    scanf("%s",larg);
     strcpy(user.pref.pref4, larg);
 
     printf("\nNum. 5:");
-    scanf("%s",&larg);
+    scanf("%s",larg);
     strcpy(user.pref.pref5, larg);
-    return user;
-}
- void new_lista(usuario new_user,List_Users *l){ //añadir al main
-    List_Users *new_list = (List_Users*)malloc(sizeof(List_Users));
-    new_list->user=new_user;
-    new_list->next=NULL;
-     if(l->total_users==0){
-         l = new_list;
+
+    List_Users *new_list = malloc(sizeof(List_Users));
+    new_list->user = user;
+    new_list->next = NULL;
+
+    if(*l == NULL){
+        *l = new_list;
     }
     else {
-        while (l->next!=NULL){
-            l= l->next;
+        List_Users *current = *l;
+        while (current->next != NULL){
+            current = current->next;
         }
-        l->next= new_list;
+        current->next = new_list;
     }
-     l->total_users++;//
+    (*l)->total_users++;
 }
+
 
 void listar(List_Users *l ){ //print users
-    for(int i=0;i<l->total_users; i++) {
-        printf("%s", l->user.nombre);
-        l = l->next;
+    if(l==NULL){
+        printf("No hay usuarios para listar\n");
+        return;
     }
+    else{
+        List_Users *current = l;
+        while (current != NULL) {
+            printf("%s\n", current->user.nombre);
+            current = current->next;
+        }
+    }
+
 }
 
-usuario busqueda(List_Users *l){ // buscar usuario lo retorna para operar con el.
-    char nombre[MAX_USUARIO];
-    int si=1;
-    scanf("%s",&nombre);
-    while(si!=0) {
-        si=strcmp(nombre,l->user.nombre);
-        l = l->next;
-    }
-    return l->user;
+void op_usuario(List_Users *l){
+    char nombre_usuario[MAX_USUARIO];
+    printf("Ingrese el nombre de usuario del usuario específico: ");
+    scanf("%s", nombre_usuario);
 }
+/*int busqueda(List_Users *l,char nombre[MAX_USUARIO]){ // buscar usuario
+    for(int i=0; i<l->total_users;i++){
+        if(nombre==&l->user){
+           return 1;
+        }
+        else{
+            l=l->next;
+        }
+    }
+    return 0;
+}
+*/
 
-int leer_archivo(){
+
+
+
+/*usuario Select(List_Users *l,char nombre[MAX_USUARIO]){//vuelve a buscar el usuario y lo retorna
+    for(int i=0; i<l->total_users;i++){
+        if(nombre==&l->user){
+            return l->user;
+        }
+        else{
+            l=l->next;
+        }
+    }
+}*/
+/*int leer_archivo(){
     FILE* archivo= fopen("Users.csv","r");
     if(archivo==NULL){
         printf("Hubo un error en abrir al archivo");
@@ -92,9 +121,9 @@ int leer_archivo(){
         user.edad= atoi(campo);
     }
     fclose(archivo);
-}
+}*/
 
-int leer_archivo_mi_forma_xd(){
+/*int leer_archivo_mi_forma_xd(){
     List_Users *l;
     FILE * archivo=fopen("Users.csv","r");
     if(archivo= NULL){
@@ -106,4 +135,4 @@ int leer_archivo_mi_forma_xd(){
         fscanf(archivo,"%s, %d, %s, %s, %s, %s, %s, %s, %s",new_user.nombre,new_user.edad,new_user.correo,new_user.ubi,new_user.pref.pref1, new_user.pref.pref2, new_user.pref.pref3, new_user.pref.pref4, new_user.pref.pref5);
         new_lista(new_user,l);
     }
-}
+}*/

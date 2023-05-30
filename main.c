@@ -6,24 +6,27 @@
 #include "base.h"
 #include "main.h"
 int main() {
-    List_Users *li ;
-    li=NULL;
-    usuario u;
-    li->total_users=0;
-    int op=0, opcion;
+    List_Users *lista = NULL;
+    int option;
     do {
-
-        new_lista(u,li);
         show_menu();
-        opcion= comprobarm();
-        op=elegirm(opcion, li);
-
-
-
-
-
-
-    }while(op!=1);
-    return 0;
+        printf("Selecciona una opcion:");
+        scanf("%d", &option);
+        if(option==1){//Insertar nuevo usuario
+            new_usuario(&lista);
+        }
+        else if(option==2){//Mostrar en pantalla los usuarios registrados
+            listar(lista);
+        }
+        else if(option==3){// Operar como usuario
+            op_usuario(lista);
+        }
+        else if(option==4){//salir, borra la memoria dinamica assignada y cualquier cosa abierta
+            //salir()
+        }
+        else{
+            printf("Opcion invalida");
+        }
+    } while (option!=4);
 }
 

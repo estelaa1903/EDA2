@@ -24,8 +24,9 @@ void show_submenu(){
     printf("-----------------------------------------\n");
 
 }
-int elegirm(int opcion, List_Users *l){
-    int subm;
+/* int elegirm(int opcion, List_Users *l){ //borrar
+    int subm,search;
+    char name[MAX_USUARIO];
     usuario u;
     if(opcion==1){
         u=new_usuario();
@@ -36,17 +37,24 @@ int elegirm(int opcion, List_Users *l){
         listar(l);
         return 0;
     }else if(opcion==3){
-        u=busqueda(l);
-        show_submenu();
-        subm=comprobarsm();
-        elegirsm(subm, u);
+        printf("Introduce el usuario:\n");
+        scanf("%s",name);
+        search=busqueda(l,name);
+        if(search==1){
+            u= Select(l,name);
+            show_submenu();
+            subm=comprobarsm();
+            elegirsm(subm, u);
+
+        }
+        else printf("Usuario no encontrado\n");
         return 0;
     }else if(opcion==4){
         return 1;
     }
     }
 
-int comprobarm(){
+int comprobarm(){//borrar
     int opcion;
     printf("Elige una opcion: (1-4)\n");
     scanf("%d", &opcion);
@@ -57,7 +65,7 @@ int comprobarm(){
     return opcion;
 }
 
-void elegirsm(int opcion, usuario u){// elegir opcion submenu
+void elegirsm(int opcion, usuario u){// borrar
     if(opcion==1){
 
     }
@@ -70,7 +78,7 @@ void elegirsm(int opcion, usuario u){// elegir opcion submenu
 
     }
 }
-int comprobarsm(){
+int comprobarsm(){//borrar
     int opcion;
     printf("Elige una opcion: (1-5)");
     scanf("%d", &opcion);
@@ -79,4 +87,4 @@ int comprobarsm(){
         scanf("%d", &opcion);
     }
     return  opcion;
-}
+}*/
