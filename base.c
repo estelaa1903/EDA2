@@ -7,22 +7,22 @@
 usuario new_usuario(){
      usuario user;
     char usu[MAX_USUARIO], larg[MAX_LENGTH];
-    printf("¿Cual es su nombre de usuario? (MAX. 15)");
-    scanf("%s", &usu);
+    printf("\n-Cual es su nombre de usuario? (MAX. 15)");
+    scanf("%s", usu);
     strcpy(user.nombre, usu);
 
-    printf("¿Cual es su edad?");
+    printf("\n-Cual es su edad?");
     scanf("%d", &user.edad);
 
-    printf("¿Cual es su correo electronico? (MAX. 50)");
+    printf("\n-Cual es su correo electronico? (MAX. 50)");
     scanf("%s", &larg);
     strcpy(user.correo, larg);
 
-    printf("¿Cual es su Ciudad? (MAX. 50)");
+    printf("\n-Cual es su Ciudad?(MAX. 50)");
     scanf("%s", &larg);
     strcpy(user.ubi, larg);
 
-    printf("Liste 5 preferencias:");
+    printf("\nListe 5 preferencias:");
     printf("\nNum. 1:");
     scanf("%s",&larg);
     strcpy(user.pref.pref1, larg);
@@ -35,11 +35,11 @@ usuario new_usuario(){
     scanf("%s",&larg);
     strcpy(user.pref.pref3, larg);
 
-    printf("Num. 4:");
+    printf("\nNum. 4:");
     scanf("%s",&larg);
     strcpy(user.pref.pref4, larg);
 
-    printf("Num. 5:");
+    printf("\nNum. 5:");
     scanf("%s",&larg);
     strcpy(user.pref.pref5, larg);
     return user;
@@ -106,6 +106,4 @@ int leer_archivo_mi_forma_xd(){
         fscanf(archivo,"%s, %d, %s, %s, %s, %s, %s, %s, %s",new_user.nombre,new_user.edad,new_user.correo,new_user.ubi,new_user.pref.pref1, new_user.pref.pref2, new_user.pref.pref3, new_user.pref.pref4, new_user.pref.pref5);
         new_lista(new_user,l);
     }
-
-
 }

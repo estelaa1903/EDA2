@@ -7,9 +7,11 @@
 #include "main.h"
 int main() {
     List_Users *l;
-    l->total_users=0;
+    usuario u ;//= new_usuario();
+   //l->total_users=0;
     int op=0, opcion;
     do {
+        new_lista(u,l);
         show_menu();
         opcion= comprobarm();
         op=elegirm(opcion, l);
