@@ -5,12 +5,8 @@
 #ifndef EDA2_MENU_H
 #define EDA2_MENU_H
 #include "stdio.h"
-#include "base.h"
+#include "users.h"
 void show_menu();
 void show_submenu();
-int elegirm(int opcion, List_Users *l);
-void elegirsm(int opcion, usuario u);
-int comprobarm();
-int comprobarsm();
 
 #endif //EDA2_MENU_H

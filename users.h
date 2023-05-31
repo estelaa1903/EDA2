@@ -1,17 +1,9 @@
-//Header donde escribimos las bases
-
-#ifndef EDA2_BASE_H
-#define EDA2_BASE_H
+#ifndef EDA_II_RED_SOCIAL_USERS_H
+#define EDA_II_RED_SOCIAL_USERS_H
 #define MAX_LENGTH 50
 #define MAX_USUARIO 15
 #define MAX_PUB 120
-#include "stdio.h"
-#include "stdlib.h"
-#include "string.h"
-/*La función de new_usuario es la que guarda, según la estructura usuario, la información de un nuevo
- cliente, no devuelve nada. */
-
-typedef struct {
+typedef struct { //estructura que define las preferencias de un usuario
     char pref1[MAX_LENGTH];
     char pref2[MAX_LENGTH];
     char pref3[MAX_LENGTH];
@@ -19,16 +11,16 @@ typedef struct {
     char pref5[MAX_LENGTH];
 }gustos;
 
-typedef struct{
+typedef struct{//estructura de una publicacion, en este caso escrita
     char pub[MAX_PUB];
     struct publicaciones *siguiente;
 }publicaciones;
 
-typedef struct{
+typedef struct{//solicitudes
     char n_solicitud[MAX_USUARIO];
 }solicitudes;
 
-typedef struct {
+typedef struct {//estructura de usuario
     char nombre[MAX_USUARIO];
     int edad;
     char correo[MAX_LENGTH];
@@ -39,18 +31,16 @@ typedef struct {
     //solicitudes aceptadas
 }usuario;
 
-typedef struct{
+typedef struct{ //Lista de usuarios
     usuario user;
     struct List_Users *next;
     int total_users;
 }List_Users;
 
-void new_usuario(List_Users **l);
-void listar(List_Users *l);
-List_Users* Create_list();
-int lista(usuario);
-usuario busqueda(List_Users *l,char nombre[MAX_USUARIO],int *encontrado);
-usuario Select(List_Users *l,char nombre[MAX_USUARIO]);
-void op_usuario(List_Users *l);
 
-#endif //EDA2_BASE_H
+void new_usuario(List_Users **l);
+void listar(List_Users *l );
+void op_usuario(List_Users *l);
+usuario* busqueda(List_Users *l,char nombre[MAX_USUARIO]);
+void leer_file();
+#endif //EDA_II_RED_SOCIAL_USERS_H

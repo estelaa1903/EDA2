@@ -128,29 +128,29 @@ EDA2/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\EDA2.dir\build.make CMakeFiles/EDA2.dir/build
 .PHONY : EDA2/fast
 
-base.obj: base.c.obj
-.PHONY : base.obj
+gest_users.obj: gest_users.c.obj
+.PHONY : gest_users.obj
 
 # target to build an object file
-base.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\EDA2.dir\build.make CMakeFiles/EDA2.dir/base.c.obj
-.PHONY : base.c.obj
+gest_users.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EDA2.dir\build.make CMakeFiles/EDA2.dir/gest_users.c.obj
+.PHONY : gest_users.c.obj
 
-base.i: base.c.i
-.PHONY : base.i
+gest_users.i: gest_users.c.i
+.PHONY : gest_users.i
 
 # target to preprocess a source file
-base.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\EDA2.dir\build.make CMakeFiles/EDA2.dir/base.c.i
-.PHONY : base.c.i
+gest_users.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EDA2.dir\build.make CMakeFiles/EDA2.dir/gest_users.c.i
+.PHONY : gest_users.c.i
 
-base.s: base.c.s
-.PHONY : base.s
+gest_users.s: gest_users.c.s
+.PHONY : gest_users.s
 
 # target to generate assembly for a file
-base.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\EDA2.dir\build.make CMakeFiles/EDA2.dir/base.c.s
-.PHONY : base.c.s
+gest_users.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EDA2.dir\build.make CMakeFiles/EDA2.dir/gest_users.c.s
+.PHONY : gest_users.c.s
 
 main.obj: main.c.obj
 .PHONY : main.obj
@@ -200,6 +200,30 @@ menu.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\EDA2.dir\build.make CMakeFiles/EDA2.dir/menu.c.s
 .PHONY : menu.c.s
 
+users.obj: users.c.obj
+.PHONY : users.obj
+
+# target to build an object file
+users.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EDA2.dir\build.make CMakeFiles/EDA2.dir/users.c.obj
+.PHONY : users.c.obj
+
+users.i: users.c.i
+.PHONY : users.i
+
+# target to preprocess a source file
+users.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EDA2.dir\build.make CMakeFiles/EDA2.dir/users.c.i
+.PHONY : users.c.i
+
+users.s: users.c.s
+.PHONY : users.s
+
+# target to generate assembly for a file
+users.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EDA2.dir\build.make CMakeFiles/EDA2.dir/users.c.s
+.PHONY : users.c.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -209,15 +233,18 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... EDA2
-	@echo ... base.obj
-	@echo ... base.i
-	@echo ... base.s
+	@echo ... gest_users.obj
+	@echo ... gest_users.i
+	@echo ... gest_users.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
 	@echo ... menu.obj
 	@echo ... menu.i
 	@echo ... menu.s
+	@echo ... users.obj
+	@echo ... users.i
+	@echo ... users.s
 .PHONY : help
 
 
