@@ -125,7 +125,7 @@ usuario* busqueda(List_Users *l,char nombre[MAX_USUARIO]){ // buscar usuario
 void leer_file(List_Users **l){
     FILE *f;
     usuario user;
-    f = fopen("fichero_usuarios/file_users.txt", "r");
+    f = fopen("file_users.txt", "r");
     if(f!=NULL){
         List_Users *new_list = malloc(sizeof(List_Users));
         while(fscanf(f, "%s %d %s %s %s %s %s %s %s", user.nombre, &user.edad, user.correo, user.ubi, user.pref.pref1, user.pref.pref2, user.pref.pref3, user.pref.pref4, user.pref.pref5) == 9){
