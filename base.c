@@ -3,7 +3,8 @@
 //
 #include "main.h"
 #include "base.h"
-
+#include "menu.h"
+int encontrado;
 void new_usuario(List_Users **l){  //crear nuevo usuario
     usuario user;
     char usu[MAX_USUARIO], larg[MAX_LENGTH];
@@ -75,24 +76,54 @@ void listar(List_Users *l ){ //print users
     }
 
 }
+usuario busqueda(List_Users *l,char nombre[MAX_USUARIO]){ // buscar usuario
+    encontrado=0;
+    List_Users* current = l;
+    while (current != NULL) {
+        if (strcmp(nombre, current->user.nombre) == 0) {
+            encontrado=1;
+            return current->user;
+        }
+        current = current->next;
+    }
+    return current->user;
+}
 
 void op_usuario(List_Users *l){
     char nombre_usuario[MAX_USUARIO];
-    printf("Ingresa el nombre del usuario ");
+    usuario select_user;
+    printf("Ingresa el nombre del usuario:  ");
     scanf("%s", nombre_usuario);
-}
-/*int busqueda(List_Users *l,char nombre[MAX_USUARIO]){ // buscar usuario
-    for(int i=0; i<l->total_users;i++){
-        if(nombre==&l->user){
-           return 1;
-        }
-        else{
-            l=l->next;
-        }
+    select_user=busqueda(l,nombre_usuario);
+
+    if(encontrado==1){
+        //lo encuentra
+
+        printf("Has iniciado sesion como %s\n",nombre_usuario);
+        int option1;
+        do{
+            show_submenu();
+            printf("Selecciona una opcion:");
+            scanf("%d", &option1);
+            if(option1==1){//enviar solicitud
+
+            }
+            if (option1==2){//gestionar solicitudes
+
+            }
+            if (option1==3){//realizar publicacion
+
+            }
+            if (option1==4){//listar publicaciones
+
+            }
+        }while(option1!=5);
     }
-    return 0;
+    else{
+        printf("Usuario no encontrado\n");
+    }
 }
-*/
+
 
 
 

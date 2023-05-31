@@ -32,12 +32,11 @@ typedef struct{
     struct List_Users *next;
     int total_users;
 }List_Users;
-
 void new_usuario(List_Users **l);
 void listar(List_Users *l);
 List_Users* Create_list();
 int lista(usuario);
-int busqueda(List_Users *l,char nombre[MAX_USUARIO]);
+usuario busqueda(List_Users *l,char nombre[MAX_USUARIO]);
 usuario Select(List_Users *l,char nombre[MAX_USUARIO]);
 void op_usuario(List_Users *l);
 
