@@ -126,19 +126,6 @@ usuario busqueda(List_Users *l,char nombre[MAX_USUARIO],int *encontrado){ // bus
     return current->user;
 }
 
-
-
-
-/*usuario Select(List_Users *l,char nombre[MAX_USUARIO]){//vuelve a buscar el usuario y lo retorna
-    for(int i=0; i<l->total_users;i++){
-        if(nombre==&l->user){
-            return l->user;
-        }
-        else{
-            l=l->next;
-        }
-    }
-}*/
 /*int leer_archivo(){
     FILE* archivo= fopen("Users.csv","r");
     if(archivo==NULL){

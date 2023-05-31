@@ -4,6 +4,7 @@
 #define EDA2_BASE_H
 #define MAX_LENGTH 50
 #define MAX_USUARIO 15
+#define MAX_PUB 120
 #include "stdio.h"
 #include "stdlib.h"
 #include "string.h"
@@ -18,13 +19,24 @@ typedef struct {
     char pref5[MAX_LENGTH];
 }gustos;
 
+typedef struct{
+    char pub[MAX_PUB];
+    struct publicaciones *siguiente;
+}publicaciones;
+
+typedef struct{
+    char n_solicitud[MAX_USUARIO];
+}solicitudes;
+
 typedef struct {
     char nombre[MAX_USUARIO];
     int edad;
     char correo[MAX_LENGTH];
     char ubi[MAX_LENGTH];
     gustos pref;
-
+    publicaciones TimeLine;
+    solicitudes ListPeticiones;
+    //solicitudes aceptadas
 }usuario;
 
 typedef struct{
@@ -32,6 +44,7 @@ typedef struct{
     struct List_Users *next;
     int total_users;
 }List_Users;
+
 void new_usuario(List_Users **l);
 void listar(List_Users *l);
 List_Users* Create_list();
