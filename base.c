@@ -86,7 +86,7 @@ void op_usuario(List_Users *l){
     int encontrado=0;
     select_user=busqueda(l,nombre_usuario,&encontrado);
     if(encontrado==1){
-        //lo encuentra
+        //lo encuentra.
 
         printf("Has iniciado sesion como %s\n",nombre_usuario);
         int option1;
