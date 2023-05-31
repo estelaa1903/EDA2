@@ -36,7 +36,7 @@ void new_usuario(List_Users **l);
 void listar(List_Users *l);
 List_Users* Create_list();
 int lista(usuario);
-usuario busqueda(List_Users *l,char nombre[MAX_USUARIO]);
+usuario busqueda(List_Users *l,char nombre[MAX_USUARIO],int *encontrado);
 usuario Select(List_Users *l,char nombre[MAX_USUARIO]);
 void op_usuario(List_Users *l);
 

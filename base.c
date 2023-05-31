@@ -4,7 +4,8 @@
 #include "main.h"
 #include "base.h"
 #include "menu.h"
-int encontrado;
+
+//int encontrado
 void new_usuario(List_Users **l){  //crear nuevo usuario
     usuario user;
     char usu[MAX_USUARIO], larg[MAX_LENGTH];
@@ -74,28 +75,16 @@ void listar(List_Users *l ){ //print users
             current = current->next;
         }
     }
+}
 
-}
-usuario busqueda(List_Users *l,char nombre[MAX_USUARIO]){ // buscar usuario
-    encontrado=0;
-    List_Users* current = l;
-    while (current != NULL) {
-        if (strcmp(nombre, current->user.nombre) == 0) {
-            encontrado=1;
-            return current->user;
-        }
-        current = current->next;
-    }
-    return current->user;
-}
 
 void op_usuario(List_Users *l){
     char nombre_usuario[MAX_USUARIO];
     usuario select_user;
     printf("Ingresa el nombre del usuario:  ");
     scanf("%s", nombre_usuario);
-    select_user=busqueda(l,nombre_usuario);
-
+    int encontrado=0;
+    select_user=busqueda(l,nombre_usuario,&encontrado);
     if(encontrado==1){
         //lo encuentra
 
@@ -119,11 +108,23 @@ void op_usuario(List_Users *l){
             }
         }while(option1!=5);
     }
-    else{
+    else {
         printf("Usuario no encontrado\n");
     }
+
 }
 
+usuario busqueda(List_Users *l,char nombre[MAX_USUARIO],int *encontrado){ // buscar usuario
+    List_Users* current = l;
+    while (current != NULL) {
+        if (strcmp(nombre, current->user.nombre) == 0) {
+            *encontrado=1;
+            return current->user;
+        }
+        current = (List_Users *) current->next;
+    }
+    return current->user;
+}
 
 
 
