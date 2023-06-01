@@ -51,11 +51,11 @@ void new_usuario(List_Users **l){  //crear nuevo usuario
         *l = new_list;
     }
     else {
-        List_Users *current = l;
+        List_Users *current = (List_Users *) l;
         while (current->next != NULL){
-            current = current->next;
+            current = (List_Users *) current->next;
         }
-        current->next = new_list;
+        current->next = (struct List_Users *) new_list;
     }
     (*l)->total_users++;
 }
@@ -122,28 +122,29 @@ usuario* busqueda(List_Users *l,char nombre[MAX_USUARIO]){ // buscar usuario
     return &current->user;
 }
 
-void leer_file(List_Users **l){
+void leer_file(List_Users *l){
     FILE *f;
-    usuario user;
     f = fopen("file_users.txt", "r");
     if(f != NULL){
-        while(fscanf(f, "%s %d %s %s %s %s %s %s %s", &user.nombre, &user.edad, &user.correo, &user.ubi, &user.pref.pref1, &user.pref.pref2, &user.pref.pref3, &user.pref.pref4, &user.pref.pref5) == 9){
+        while(!feof(f)){
+            usuario user;
+            fscanf(f, "%s %d %s %s %s %s %s %s %s",user.nombre, &user.edad, user.correo, user.ubi, user.pref.pref1, user.pref.pref2, user.pref.pref3, user.pref.pref4, user.pref.pref5);
             printf("%s",user.nombre);
             List_Users *new_list = malloc(sizeof(List_Users));
             new_list->user = user;
             new_list->next = NULL;
 
-            if(*l == NULL){
-                *l = new_list;
+            if(l == NULL){
+                l = new_list;
             }
             else {
-                List_Users *current = *l;
+                List_Users *current = l;
                 while (current->next != NULL){
-                    current = &current->next;
+                    current = (List_Users *) current->next;
                 }
-                current->next = &new_list;
+                current->next = (struct List_Users *) new_list;
             }
-            (*l)->total_users++;
+            l->total_users++;
         }
         printf("Usuarios registrados con exito\n");
         fclose(f);

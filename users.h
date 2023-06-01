@@ -42,5 +42,5 @@ void new_usuario(List_Users **l);
 void listar(List_Users *l );
 void op_usuario(List_Users *l);
 usuario* busqueda(List_Users *l,char nombre[MAX_USUARIO]);
-void leer_file(List_Users **l);
+void leer_file(List_Users *l);
 #endif //EDA_II_RED_SOCIAL_USERS_H
