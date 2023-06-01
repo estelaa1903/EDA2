@@ -128,11 +128,13 @@ void leer_file(List_Users **l){
     f = fopen("file_users.txt", "r");
     if(f!=NULL){
         List_Users *new_list = malloc(sizeof(List_Users));
-        while(fscanf(f, "%s %d %s %s %s %s %s %s %s", user.nombre, &user.edad, user.correo, user.ubi, user.pref.pref1, user.pref.pref2, user.pref.pref3, user.pref.pref4, user.pref.pref5) == 9){
+        while(!feof(f)){
+            fscanf(f, "%s %d %s %s %s %s %s %s %s", user.nombre, &user.edad, user.correo, user.ubi, user.pref.pref1, user.pref.pref2, user.pref.pref3, user.pref.pref4, user.pref.pref5);
             new_list->user = user;
             new_list->next = NULL;
 
-            if(*l == NULL){
+            if(*l == NULL){ //podemos mirar de cambiar la condicion que no sea null para decir que esta vacio creo que hay otra manera de decirlo pero habria que mirarlo
+                //no se si se ha mirado pero probar quitandole el puntero aqui o poniendole 2 porque no se como van los punteros xd
                 *l = new_list;
             }
             else {
