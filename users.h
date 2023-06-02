@@ -1,3 +1,4 @@
+
 #ifndef EDA_II_RED_SOCIAL_USERS_H
 #define EDA_II_RED_SOCIAL_USERS_H
 #define MAX_LENGTH 50
@@ -21,16 +22,28 @@ typedef struct solicitud_amistad {
     char n_solicitud[MAX_USUARIO];
     struct solicitud_amistad* siguiente;
 } solicitud_amistad;
+typedef struct{
+    char n_solicitud[MAX_USUARIO];
+}solicitudes;
 
+typedef struct Node {
+    solicitudes solicitud;
+    struct Node* siguiente;
+} Node;
+
+
+typedef struct List_Users List_Users;
 typedef struct usuario {
     char nombre[MAX_USUARIO];
     int edad;
     char correo[MAX_LENGTH];
     char ubi[MAX_LENGTH];
     gustos pref;
-    publicacion* lista_publicaciones;
-    solicitud_amistad* cola_solicitudes;
-    solicitud_amistad* solicitudes_aceptadas;
+
+    //solicitudes aceptadas
+    Node* cola_solicitudes;  // Cola de solicitudes de amistad
+    List_Users*amigos;
+
 } usuario;
 
 
