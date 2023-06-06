@@ -90,6 +90,7 @@ void op_usuario(List_Users* l) {
             printf("Selecciona una opcion:");
             scanf("%d", &option1);
             if (option1 == 1) { //enviar solicitud
+                enviarSolicitud(l, select_user);
 
             }
             if (option1 == 2) { //gestionar solicitudes
@@ -161,4 +162,46 @@ void liberar_memoria(List_Users *l) {
         free(temp);
     }
 }
+// Función para insertar una solicitud en la cola
+void insertarSolicitud(usuario* user, char nombre[MAX_USUARIO]) {
+    Node* newNode = malloc(sizeof(Node)); // Crea un nuevo nodo con la solicitud
+    strcpy(newNode->name_sol, nombre); // Guarda el nombre del usuario que envió la solicitud
 
+    if (user->cola_solicitudes == NULL) { // Si la cola está vacía
+        user->cola_solicitudes = newNode; // El nuevo nodo se convierte en el frente de la cola
+    } else {
+        Node* temp = user->cola_solicitudes; // Puntero temporal para recorrer la cola
+        while (temp->siguiente != NULL) { // Recorre la cola hasta el último nodo
+            temp = temp->siguiente;
+        }
+        temp->siguiente = newNode; // Agrega el nuevo nodo al final de la cola
+    }
+}
+
+// Función para mostrar las amistades aceptadas
+void mostrarAmistades(usuario* user) {
+    if (user->amigos == NULL) { // Si la lista de amigos está vacía
+        printf("No tienes amistades aceptadas.\n");
+    } else {
+        List_Users* temp = user->amigos; // Puntero temporal para recorrer la lista de amigos
+        printf("Tus amistades aceptadas son:\n");
+        while (temp != NULL) { // Recorre la lista hasta el final
+            printf("- %s\n", temp->user.nombre); // Imprime el nombre del amigo
+            temp = temp->next; // Avanza al siguiente nodo
+        }
+    }
+}
+void enviarSolicitud(List_Users* l, usuario* user) {
+    char nombre[MAX_USUARIO];
+    usuario* req_user;
+    printf("Ingresa el nombre del usuario al que deseas enviar la solicitud: ");
+    scanf("%s", nombre);
+    req_user = busqueda(l, nombre);
+    if (encontrado == 1) {
+        // Inserta aquí la lógica para enviar la solicitud de amistad
+        insertarSolicitud(req_user, user->nombre);
+        printf("Solicitud enviada a %s\n", req_user->nombre);
+    } else {
+        printf("El usuario no fue encontrado\n");
+    }
+}
