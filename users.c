@@ -94,7 +94,7 @@ void op_usuario(List_Users* l) {
 
             }
             if (option1 == 2) { //gestionar solicitudes
-
+                procesarSolicitudesPendientes(select_user);
             }
             if (option1 == 3) { //realizar publicacion.
 
