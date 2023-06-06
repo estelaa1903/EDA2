@@ -96,7 +96,7 @@ void op_usuario(List_Users* l) {
             if (option1 == 2) { //gestionar solicitudes
 
             }
-            if (option1 == 3) { //realizar publicacion
+            if (option1 == 3) { //realizar publicacion.
 
             }
             if (option1 == 4) { //Mostrar amigos
