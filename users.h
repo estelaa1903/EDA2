@@ -19,7 +19,7 @@ typedef struct publicacion {
 } publicacion;
 
 
-typedef struct {//Estructura de solicitudes de amistad
+typedef struct {//Estructura de solicitudes de amistad.
     char name_sol[MAX_USUARIO];
     struct Node* siguiente;
 } Node;
