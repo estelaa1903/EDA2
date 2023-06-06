@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include "users.h"
 #include "menu.h"
+#include "gest_users.h"
 
 int encontrado;
 
@@ -48,7 +49,8 @@ void new_usuario(List_Users** l) {
     List_Users* new_list = malloc(sizeof(List_Users));
     new_list->user = user;
     new_list->next = NULL;
-
+    new_list->user.amigos= NULL;
+    new_list->user.cola_solicitudes= NULL;
     if (*l == NULL) {
         *l = new_list;
     } else {
@@ -80,7 +82,6 @@ void op_usuario(List_Users* l) {
     printf("Ingresa el nombre del usuario:  ");
     scanf("%s", nombre_usuario);
     select_user = busqueda(l, nombre_usuario);
-    printf("%d\n", encontrado);
     if (encontrado == 1) {
         printf("Has iniciado sesion como %s\n", select_user->nombre);
         int option1;
@@ -97,8 +98,8 @@ void op_usuario(List_Users* l) {
             if (option1 == 3) { //realizar publicacion
 
             }
-            if (option1 == 4) { //listar publicaciones
-
+            if (option1 == 4) { //Mostrar amigos
+                mostrarAmistades(select_user);
             }
         } while (option1 != 5);
     } else {
@@ -128,10 +129,13 @@ void leer_file(List_Users** l) {
             List_Users* new_list = malloc(sizeof(List_Users));
             new_list->user = user;
             new_list->next = NULL;
+            new_list->user.amigos= NULL;
+            new_list->user.cola_solicitudes= NULL;
 
             if (*l == NULL) {
                 *l = new_list;
-            } else {
+            }
+            else {
                 List_Users* current = *l;
                 while (current->next != NULL) {
                     current = current->next;
@@ -142,9 +146,8 @@ void leer_file(List_Users** l) {
         }
         printf("Usuarios registrados con exito\n");
         fclose(file);
-
-        // After adding users from the file, list them
-    } else {
+    }
+    else {
         perror("Error al abrir el archivo");
     }
 }
@@ -158,52 +161,4 @@ void liberar_memoria(List_Users *l) {
         free(temp);
     }
 }
-// Función para crear un nuevo nodo de solicitud
-Node* crearNodo(solicitudes solicitud) {
-    Node* newNode = (Node*)malloc(sizeof(Node)); // Asigna memoria para un nuevo nodo
-    strcpy(newNode->solicitud.n_solicitud, solicitud.n_solicitud); // Copia la solicitud en el nodo
-    newNode->siguiente = NULL; // Establece el puntero siguiente como NULL
-    return newNode; // Devuelve el puntero al nuevo nodo
-}
-
-// Función para insertar una solicitud en la cola
-void insertarSolicitud(usuario* user, solicitudes solicitud) {
-    Node* newNode = crearNodo(solicitud); // Crea un nuevo nodo con la solicitud
-    if (user->cola_solicitudes == NULL) { // Si la cola está vacía
-        user->cola_solicitudes = newNode; // El nuevo nodo se convierte en el frente de la cola
-    } else {
-        Node* temp = user->cola_solicitudes; // Puntero temporal para recorrer la cola
-        while (temp->siguiente != NULL) { // Recorre la cola hasta el último nodo
-            temp = temp->siguiente;
-        }
-        temp->siguiente = newNode; // Agrega el nuevo nodo al final de la cola
-    }
-}
-
-// Función para procesar la siguiente solicitud de amistad en la cola
-void procesarSolicitud(usuario* user) {
-    if (user->cola_solicitudes != NULL) { // Si la cola no está vacía
-        Node* temp = user->cola_solicitudes; // Puntero temporal para el nodo a procesar
-        user->cola_solicitudes = temp->siguiente; // Actualiza el frente de la cola
-        // Aquí puedes escribir la lógica para aceptar o denegar la solicitud
-        // Por ejemplo, si se acepta, puedes agregar al usuario en la lista de amigos aceptados
-        // Puedes usar la estructura List_Users para almacenar los amigos aceptados
-        free(temp); // Libera la memoria del nodo eliminado
-    }
-}
-
-// Función para mostrar las amistades aceptadas
-void mostrarAmistades(usuario* user) {
-    if (user->amigos == NULL) { // Si la lista de amigos está vacía
-        printf("No tienes amistades aceptadas.\n");
-    } else {
-        List_Users* temp = user->amigos; // Puntero temporal para recorrer la lista de amigos
-        printf("Tus amistades aceptadas son:\n");
-        while (temp != NULL) { // Recorre la lista hasta el final
-            printf("- %s\n", temp->user.nombre); // Imprime el nombre del amigo
-            temp = temp->next; // Avanza al siguiente nodo
-        }
-    }
-}
-
 
