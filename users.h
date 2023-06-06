@@ -28,7 +28,7 @@ typedef struct{
 }solicitudes;
 
 typedef struct Node {
-    solicitudes solicitud;
+    struct usuario solicitud;
     struct Node* siguiente;
 } Node;
 
@@ -40,7 +40,6 @@ typedef struct usuario {
     char correo[MAX_LENGTH];
     char ubi[MAX_LENGTH];
     gustos pref;
-
     //solicitudes aceptadas
     Node* cola_solicitudes;  // Cola de solicitudes de amistad
     List_Users*amigos;

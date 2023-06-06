@@ -31,12 +31,31 @@ void procesarSolicitud(usuario* user) {
     if (user->cola_solicitudes != NULL) { // Si la cola no está vacía
         Node* temp = user->cola_solicitudes; // Puntero temporal para el nodo a procesar
         user->cola_solicitudes = temp->siguiente; // Actualiza el frente de la cola
-        // Aquí puedes escribir la lógica para aceptar o denegar la solicitud
-        // Por ejemplo, si se acepta, puedes agregar al usuario en la lista de amigos aceptados
-        // Puedes usar la estructura List_Users para almacenar los amigos aceptados
+
+        // Aquí hay que escribir la lógica para aceptar o denegar la solicitud
+
+
+        // Creamos un nuevo nodo para almacenar al usuario aceptado
+        List_Users* nuevo_amigo = (List_Users*)malloc(sizeof(List_Users));
+        nuevo_amigo->user = temp->solicitud;
+        nuevo_amigo->next = NULL;
+
+        // Verificamos si la lista de amigos está vacía
+        if (user->amigos == NULL) {
+            user->amigos = nuevo_amigo; // El nuevo amigo se convierte en el primer amigo de la lista
+        } else {
+            // Recorremos la lista de amigos hasta llegar al último nodo
+            List_Users* actual = user->amigos;
+            while (actual->next != NULL) {
+                actual = actual->next;
+            }
+            actual->next = nuevo_amigo; // Agregamos el nuevo amigo al final de la lista
+        }
+
         free(temp); // Libera la memoria del nodo eliminado
     }
 }
+
 
 // Función para mostrar las amistades aceptadas
 void mostrarAmistades(usuario* user) {
