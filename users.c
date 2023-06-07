@@ -166,6 +166,7 @@ void liberar_memoria(List_Users *l) {
 void insertarSolicitud(usuario* user, char nombre[MAX_USUARIO]) {
     Node* newNode = malloc(sizeof(Node)); // Crea un nuevo nodo con la solicitud
     strcpy(newNode->name_sol, nombre); // Guarda el nombre del usuario que envió la solicitud
+    newNode->siguiente=NULL;
 
     if (user->cola_solicitudes == NULL) { // Si la cola está vacía
         user->cola_solicitudes = newNode; // El nuevo nodo se convierte en el frente de la cola
@@ -280,57 +281,39 @@ int aceptarSolicitud(usuario* user, char nombre[MAX_USUARIO]) {
 
 
 void procesarSolicitudesPendientes(usuario* user) {
-    if (user->cola_solicitudes == NULL) { // Si no hay solicitudes pendientes
+    // Verificar si hay solicitudes pendientes
+    if (user->cola_solicitudes == NULL) {
         printf("No tienes solicitudes pendientes.\n");
         return;
     }
 
-    Node* temp = user->cola_solicitudes;
-    int opcion;
-
     printf("Tienes solicitudes pendientes:\n");
-    int index = 1;
+    int i = 1;
+    Node* temp = user->cola_solicitudes;
     while (temp != NULL) {
-        printf("%d. Usuario: %s\n", index, temp->name_sol);
+        printf("%d. Usuario: %s\n", i, temp->name_sol);
         temp = temp->siguiente;
-        index++;
+        i++;
     }
 
-    printf("Seleccione el número de solicitud que desea procesar (0 para cancelar): ");
+    printf("Selecciona la solicitud que deseas procesar (ingresa el número): ");
+    int opcion;
     scanf("%d", &opcion);
 
-    if (opcion == 0) {
-        return;
-    }
-
-    if (opcion < 1 || opcion > index - 1) {
-        printf("Opción inválida. Por favor, seleccione un número válido.\n");
-        return;
-    }
-
+    // Obtener el nombre del usuario seleccionado
     temp = user->cola_solicitudes;
-    Node* prev = NULL;
-    int count = 1;
-
-    while (count != opcion) {
-        prev = temp;
+    for (int j = 1; j < opcion; j++) {
         temp = temp->siguiente;
-        count++;
     }
+    char nombre[MAX_USUARIO];
+    strcpy(nombre, temp->name_sol);
 
-    if (prev == NULL) { // Si la solicitud a procesar es la primera de la cola
-        user->cola_solicitudes = temp->siguiente; // Actualiza el frente de la cola
+    // Procesar la solicitud seleccionada
+    if (aceptarSolicitud(user, nombre)) {
+        printf("Solicitud aceptada correctamente.\n");
     } else {
-        prev->siguiente = temp->siguiente; // Salta el nodo de la solicitud a procesar
+        printf("No se pudo procesar la solicitud.\n");
     }
-
-    // Agrega el usuario a la lista de amigos si la solicitud es aceptada
-    if (aceptarSolicitud(user, temp->name_sol)==1) {
-        printf("Solicitud aceptada. Ahora eres amigo de %s.\n", temp->name_sol);
-    } else {
-        printf("Solicitud rechazada.\n");
-    }
-
-    free(temp); // Libera la memoria del nodo de solicitud procesado
 }
+
 
