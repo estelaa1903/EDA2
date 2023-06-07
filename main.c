@@ -23,7 +23,7 @@ int main() {
         else if(option==4){
             op_usuario(lista);
         }
-        else if(option==5){//salir, borra la memoria dinamica assignada y cualquier cosa abierta
+        else if(option==5){//salir, borra la memoria dinamica assignada y cualquier cosa abierta.
             liberar_memoria(lista);
             printf("Saliste del programa");
         }

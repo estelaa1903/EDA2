@@ -1,14 +1,7 @@
-#include "gest_users.h"
+#include <string.h>
+#include "stdio.h"
+#include <stdlib.h>
+#include "users.h"
 
-/*void enviar_solicitud(){
 
-}
-void gest_peticiones(){
 
-}
-void realizar_publicacion(){
-
-}
-void listar_publicaciones(){
-
-}*/

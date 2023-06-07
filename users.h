@@ -18,16 +18,9 @@ typedef struct publicacion {
     struct publicacion* siguiente;
 } publicacion;
 
-typedef struct solicitud_amistad {
-    char n_solicitud[MAX_USUARIO];
-    struct solicitud_amistad* siguiente;
-} solicitud_amistad;
-typedef struct{
-    char n_solicitud[MAX_USUARIO];
-}solicitudes;
 
-typedef struct Node {
-    solicitudes solicitud;
+typedef struct {//Estructura de solicitudes de amistad.
+    char name_sol[MAX_USUARIO];
     struct Node* siguiente;
 } Node;
 
@@ -39,10 +32,10 @@ typedef struct usuario {
     char correo[MAX_LENGTH];
     char ubi[MAX_LENGTH];
     gustos pref;
-
     //solicitudes aceptadas
     Node* cola_solicitudes;  // Cola de solicitudes de amistad
     List_Users*amigos;
+
 
 } usuario;
 

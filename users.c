@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include "users.h"
 #include "menu.h"
+#include "gest_users.h"
 
 int encontrado;
 
@@ -48,7 +49,8 @@ void new_usuario(List_Users** l) {
     List_Users* new_list = malloc(sizeof(List_Users));
     new_list->user = user;
     new_list->next = NULL;
-
+    new_list->user.amigos= NULL;
+    new_list->user.cola_solicitudes= NULL;
     if (*l == NULL) {
         *l = new_list;
     } else {
@@ -80,7 +82,6 @@ void op_usuario(List_Users* l) {
     printf("Ingresa el nombre del usuario:  ");
     scanf("%s", nombre_usuario);
     select_user = busqueda(l, nombre_usuario);
-    printf("%d\n", encontrado);
     if (encontrado == 1) {
         printf("Has iniciado sesion como %s\n", select_user->nombre);
         int option1;
@@ -89,16 +90,17 @@ void op_usuario(List_Users* l) {
             printf("Selecciona una opcion:");
             scanf("%d", &option1);
             if (option1 == 1) { //enviar solicitud
+                enviarSolicitud(l, select_user);
 
             }
             if (option1 == 2) { //gestionar solicitudes
+                procesarSolicitudesPendientes(select_user);
+            }
+            if (option1 == 3) { //realizar publicacion.
 
             }
-            if (option1 == 3) { //realizar publicacion
-
-            }
-            if (option1 == 4) { //listar publicaciones
-
+            if (option1 == 4) { //Mostrar amigos
+                mostrarAmistades(select_user);
             }
         } while (option1 != 5);
     } else {
@@ -128,10 +130,13 @@ void leer_file(List_Users** l) {
             List_Users* new_list = malloc(sizeof(List_Users));
             new_list->user = user;
             new_list->next = NULL;
+            new_list->user.amigos= NULL;
+            new_list->user.cola_solicitudes= NULL;
 
             if (*l == NULL) {
                 *l = new_list;
-            } else {
+            }
+            else {
                 List_Users* current = *l;
                 while (current->next != NULL) {
                     current = current->next;
@@ -142,9 +147,8 @@ void leer_file(List_Users** l) {
         }
         printf("Usuarios registrados con exito\n");
         fclose(file);
-
-        // After adding users from the file, list them
-    } else {
+    }
+    else {
         perror("Error al abrir el archivo");
     }
 }
@@ -158,17 +162,11 @@ void liberar_memoria(List_Users *l) {
         free(temp);
     }
 }
-// Función para crear un nuevo nodo de solicitud
-Node* crearNodo(solicitudes solicitud) {
-    Node* newNode = (Node*)malloc(sizeof(Node)); // Asigna memoria para un nuevo nodo
-    strcpy(newNode->solicitud.n_solicitud, solicitud.n_solicitud); // Copia la solicitud en el nodo
-    newNode->siguiente = NULL; // Establece el puntero siguiente como NULL
-    return newNode; // Devuelve el puntero al nuevo nodo
-}
-
 // Función para insertar una solicitud en la cola
-void insertarSolicitud(usuario* user, solicitudes solicitud) {
-    Node* newNode = crearNodo(solicitud); // Crea un nuevo nodo con la solicitud
+void insertarSolicitud(usuario* user, char nombre[MAX_USUARIO]) {
+    Node* newNode = malloc(sizeof(Node)); // Crea un nuevo nodo con la solicitud
+    strcpy(newNode->name_sol, nombre); // Guarda el nombre del usuario que envió la solicitud
+
     if (user->cola_solicitudes == NULL) { // Si la cola está vacía
         user->cola_solicitudes = newNode; // El nuevo nodo se convierte en el frente de la cola
     } else {
@@ -177,18 +175,6 @@ void insertarSolicitud(usuario* user, solicitudes solicitud) {
             temp = temp->siguiente;
         }
         temp->siguiente = newNode; // Agrega el nuevo nodo al final de la cola
-    }
-}
-
-// Función para procesar la siguiente solicitud de amistad en la cola
-void procesarSolicitud(usuario* user) {
-    if (user->cola_solicitudes != NULL) { // Si la cola no está vacía
-        Node* temp = user->cola_solicitudes; // Puntero temporal para el nodo a procesar
-        user->cola_solicitudes = temp->siguiente; // Actualiza el frente de la cola
-        // Aquí puedes escribir la lógica para aceptar o denegar la solicitud
-        // Por ejemplo, si se acepta, puedes agregar al usuario en la lista de amigos aceptados
-        // Puedes usar la estructura List_Users para almacenar los amigos aceptados
-        free(temp); // Libera la memoria del nodo eliminado
     }
 }
 
@@ -205,5 +191,146 @@ void mostrarAmistades(usuario* user) {
         }
     }
 }
+void enviarSolicitud(List_Users* l, usuario* user) {
+    char nombre[MAX_USUARIO];
+    usuario* req_user;
+    printf("Ingresa el nombre del usuario al que deseas enviar la solicitud: ");
+    scanf("%s", nombre);
+    req_user = busqueda(l, nombre);
+    if (encontrado == 1) {
+        // Inserta aquí la lógica para enviar la solicitud de amistad
+        insertarSolicitud(req_user, user->nombre);
+        printf("Solicitud enviada a %s\n", req_user->nombre);
+    } else {
+        printf("El usuario no fue encontrado\n");
+    }
+}
+int aceptarSolicitud(usuario* user, char nombre[MAX_USUARIO]) {
+    // Buscar la solicitud en la cola de solicitudes pendientes
+    Node* temp = user->cola_solicitudes;
+    Node* prev = NULL;
+    while (temp != NULL) {
+        if (strcmp(temp->name_sol, nombre) == 0) {
+            // Mostrar la solicitud al usuario y solicitar su decisión
+            printf("Has recibido una solicitud de amistad de %s\n", nombre);
+            printf("¿Deseas aceptarla? (s/n): ");
+            char decision;
+            scanf(" %c", &decision);
 
+            if (decision == 's' || decision == 'S') {
+                // Aceptar la solicitud y agregar al usuario a la lista de amigos
+                if (user->amigos == NULL) {
+                    user->amigos = malloc(sizeof(List_Users));
+                    strcpy(user->amigos->user.nombre, nombre);
+                    user->amigos->next = NULL;
+                } else {
+                    List_Users* amigoTemp = user->amigos;
+                    while (amigoTemp->next != NULL) {
+                        if (strcmp(amigoTemp->user.nombre, nombre) == 0) {
+                            printf("Ya eres amigo de %s.\n", nombre);
+                            return 0;
+                        }
+                        amigoTemp = amigoTemp->next;
+                    }
+
+                    if (strcmp(amigoTemp->user.nombre, nombre) == 0) {
+                        printf("Ya eres amigo de %s.\n", nombre);
+                        return 0;
+                    }
+
+                    List_Users* nuevoAmigo = malloc(sizeof(List_Users));
+                    strcpy(nuevoAmigo->user.nombre, nombre);
+                    nuevoAmigo->next = NULL;
+                    amigoTemp->next = nuevoAmigo;
+                }
+
+                // Eliminar la solicitud de la cola de solicitudes pendientes
+                if (prev == NULL) {
+                    user->cola_solicitudes = temp->siguiente;
+                } else {
+                    prev->siguiente = temp->siguiente;
+                }
+
+                free(temp);
+                return 1; // Solicitud aceptada correctamente
+            } else {
+                // Rechazar la solicitud
+                printf("Has rechazado la solicitud de amistad de %s\n", nombre);
+
+                // Eliminar la solicitud de la cola de solicitudes pendientes
+                if (prev == NULL) {
+                    user->cola_solicitudes = temp->siguiente;
+                } else {
+                    prev->siguiente = temp->siguiente;
+                }
+
+                free(temp);
+                return 0; // Solicitud rechazada
+            }
+        }
+
+        prev = temp;
+        temp = temp->siguiente;
+    }
+
+    // La solicitud no fue encontrada en la cola de solicitudes pendientes
+    printf("No se encontró ninguna solicitud de amistad de %s\n", nombre);
+    return 0; // Solicitud no encontrada
+}
+
+
+void procesarSolicitudesPendientes(usuario* user) {
+    if (user->cola_solicitudes == NULL) { // Si no hay solicitudes pendientes
+        printf("No tienes solicitudes pendientes.\n");
+        return;
+    }
+
+    Node* temp = user->cola_solicitudes;
+    int opcion;
+
+    printf("Tienes solicitudes pendientes:\n");
+    int index = 1;
+    while (temp != NULL) {
+        printf("%d. Usuario: %s\n", index, temp->name_sol);
+        temp = temp->siguiente;
+        index++;
+    }
+
+    printf("Seleccione el número de solicitud que desea procesar (0 para cancelar): ");
+    scanf("%d", &opcion);
+
+    if (opcion == 0) {
+        return;
+    }
+
+    if (opcion < 1 || opcion > index - 1) {
+        printf("Opción inválida. Por favor, seleccione un número válido.\n");
+        return;
+    }
+
+    temp = user->cola_solicitudes;
+    Node* prev = NULL;
+    int count = 1;
+
+    while (count != opcion) {
+        prev = temp;
+        temp = temp->siguiente;
+        count++;
+    }
+
+    if (prev == NULL) { // Si la solicitud a procesar es la primera de la cola
+        user->cola_solicitudes = temp->siguiente; // Actualiza el frente de la cola
+    } else {
+        prev->siguiente = temp->siguiente; // Salta el nodo de la solicitud a procesar
+    }
+
+    // Agrega el usuario a la lista de amigos si la solicitud es aceptada
+    if (aceptarSolicitud(user, temp->name_sol)==1) {
+        printf("Solicitud aceptada. Ahora eres amigo de %s.\n", temp->name_sol);
+    } else {
+        printf("Solicitud rechazada.\n");
+    }
+
+    free(temp); // Libera la memoria del nodo de solicitud procesado
+}
 
