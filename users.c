@@ -214,7 +214,7 @@ int aceptarSolicitud(usuario* user, char nombre[MAX_USUARIO]) {
         if (strcmp(temp->name_sol, nombre) == 0) {
             // Mostrar la solicitud al usuario y solicitar su decisión
             printf("Has recibido una solicitud de amistad de %s\n", nombre);
-            printf("¿Deseas aceptarla? (s/n): ");
+            printf("Deseas aceptarla? (s/n): ");
             char decision;
             scanf(" %c", &decision);
 
@@ -296,7 +296,7 @@ void procesarSolicitudesPendientes(usuario* user) {
         i++;
     }
 
-    printf("Selecciona la solicitud que deseas procesar (ingresa el número): ");
+    printf("Selecciona la solicitud que deseas procesar (ingresa el numero): ");
     int opcion;
     scanf("%d", &opcion);
 
