@@ -112,10 +112,14 @@ void op_usuario(List_Users* l) {
                 printf("Publicacion realizada con exito.\n");
 
             }
-            if (option1 == 4) { //Mostrar amigos
+            if(option1 ==4){// Mostrar historial de publicaciones
+                mostrarHistorial(select_user);
+
+            }
+            if (option1 == 5) { //Mostrar amigos
                 mostrarAmistades(select_user);
             }
-        } while (option1 != 5);
+        } while (option1 != 6);
     } else {
         printf("Usuario no encontrado\n");
     }

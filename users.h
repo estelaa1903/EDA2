@@ -53,5 +53,5 @@ usuario* busqueda(List_Users* l, char nombre[MAX_USUARIO]);
 void leer_file(List_Users** l);
 void liberar_memoria(List_Users *l);
 void realizar_publicacion(usuario* user, const char* texto);
-
+void mostrarHistorial(usuario* user);
 #endif //EDA_II_RED_SOCIAL_USERS_H
