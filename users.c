@@ -15,7 +15,7 @@ void new_usuario(List_Users** l) {
         scanf("%s", usu);
         busqueda(*l,usu);
         if (encontrado==1){
-            printf("El usuario introducido ya es existente\n");
+            printf("El usuario introducido ya es existente.\n");
         }
         else{
             strcpy(user.nombre, usu);
