@@ -10,9 +10,17 @@ int encontrado;
 void new_usuario(List_Users** l) {
     usuario user;
     char usu[MAX_USUARIO], larg[MAX_LENGTH];
-    printf("\n-Cual es su nombre de usuario? (MAX. 15)");
-    scanf("%s", usu);
-    strcpy(user.nombre, usu);
+    do {
+        printf("\n-Cual es su nombre de usuario? (MAX. 15)");
+        scanf("%s", usu);
+        busqueda(*l,usu);
+        if (encontrado==1){
+            printf("El usuario introducido ya es existente");
+        }
+        else{
+            strcpy(user.nombre, usu);
+        }
+    }while(encontrado==1);
 
     printf("\n-Cual es su edad?");
     scanf("%d", &user.edad);
