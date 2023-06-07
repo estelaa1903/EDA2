@@ -16,8 +16,9 @@ void show_submenu(){
     printf("1. Enviar solicitud de amistad \n");
     printf("2. Gestionar solicitudes pendientes \n");
     printf("3. Realizar una publicacion \n");
-    printf("4. Mostrar amigos \n");
-    printf("5. Volver al menu principal \n");
+    printf("4. Ver el historial de publicaciones \n");
+    printf("5. Mostrar amigos \n");
+    printf("6. Volver al menu principal \n");
     printf("-----------------------------------------\n");
 
 }

@@ -19,7 +19,7 @@ typedef struct publicacion {
 } publicacion;
 
 
-typedef struct {//Estructura de solicitudes de amistad.
+typedef struct {//Estructura de solicitudes de amistad
     char name_sol[MAX_USUARIO];
     struct Node* siguiente;
 } Node;
@@ -35,7 +35,7 @@ typedef struct usuario {
     //solicitudes aceptadas
     Node* cola_solicitudes;  // Cola de solicitudes de amistad
     List_Users*amigos;
-
+    publicacion* publicaciones;
 
 } usuario;
 
@@ -52,4 +52,6 @@ void op_usuario(List_Users* l);
 usuario* busqueda(List_Users* l, char nombre[MAX_USUARIO]);
 void leer_file(List_Users** l);
 void liberar_memoria(List_Users *l);
+void realizar_publicacion(usuario* user, const char* texto);
+void mostrarHistorial(usuario* user);
 #endif //EDA_II_RED_SOCIAL_USERS_H
