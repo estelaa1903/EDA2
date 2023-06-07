@@ -104,7 +104,12 @@ void op_usuario(List_Users* l) {
             if (option1 == 2) { //gestionar solicitudes
                 procesarSolicitudesPendientes(select_user);
             }
-            if (option1 == 3) { //realizar publicacion.
+            if (option1 == 3) {//realizar publicacion.
+                char texto[MAX_PUB];
+                printf("Ingresa el texto de la publicacion (max. 120 caracteres): ");
+                scanf(" %[^\n]", texto);
+                realizar_publicacion(select_user, texto);
+                printf("Publicacion realizada con exito.\n");
 
             }
             if (option1 == 4) { //Mostrar amigos
@@ -321,6 +326,33 @@ void procesarSolicitudesPendientes(usuario* user) {
         printf("Solicitud aceptada correctamente.\n");
     } else {
         printf("No se pudo procesar la solicitud.\n");
+    }
+}
+
+void realizar_publicacion(usuario* user, const char* texto) {
+    // Crear una nueva publicación
+    publicacion* nueva_publicacion = malloc(sizeof(publicacion));
+    strcpy(nueva_publicacion->pub, texto);
+    nueva_publicacion->siguiente = NULL;
+
+    // Insertar la nueva publicación al inicio de la lista de publicaciones
+    nueva_publicacion->siguiente = user->publicaciones;
+    user->publicaciones = nueva_publicacion;
+}
+
+void mostrarHistorial(usuario* user) {
+    if (user->publicaciones == NULL) {
+        printf("No has realizado ninguna publicacion.\n");
+        return;
+    }
+
+    printf("Historial de publicaciones:\n");
+    publicacion* current = user->publicaciones;
+    int count = 1;
+    while (current != NULL) {
+        printf("%d. %s\n", count, current->pub);
+        current = current->siguiente;
+        count++;
     }
 }
 
