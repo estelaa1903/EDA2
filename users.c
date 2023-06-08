@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include "users.h"
 #include "menu.h"
-#include "gest_users.h"
+
 
 int encontrado;
 void new_usuario(List_Users** l) {
@@ -342,23 +342,86 @@ void realizar_publicacion(usuario* user, const char* texto) {
     nueva_publicacion->siguiente = user->publicaciones;
     user->publicaciones = nueva_publicacion;
     user->num_pub++;
+
+    // Actualizar el diccionario con las palabras de la publicación
+    char copia_texto[MAX_PUB];
+    strcpy(copia_texto, texto);
+    char* token = strtok(copia_texto, " ");
+    while (token != NULL) {
+        agregarPalabraDiccionario(token);
+        token = strtok(NULL, " ");
+    }
 }
 
 void mostrarHistorial(usuario* user) {
-    if (user->publicaciones == NULL) {
+
+    if (user->num_pub == 0) {
         printf("No has realizado ninguna publicacion.\n");
         return;
     }
     else{
         printf("Historial de publicaciones:\n");
         publicacion* current = user->publicaciones;
-        int count = 1;
-            while (current != NULL) {
-                printf("%d. %s\n", count, current->pub);
+        int count = 0;
+        int k;
+            while (count<user->num_pub) {
+                k = user->num_pub-count;
+                printf("%d. %s\n", k, current->pub);
                 current = current->siguiente;
                 count++;
             }
     }
+    void show_submenu();
 }
+void inicializarDiccionario() {
+    for (int i = 0; i < MAX_PALABRAS; i++) {
+        strcpy(diccionario[i].palabra, "");
+        diccionario[i].conteo = 0;
+    }
+}
+
+void agregarPalabraDiccionario(char* palabra) {
+    for (int i = 0; i < numPalabras; i++) {
+        if (strcmp(diccionario[i].palabra, palabra) == 0) {
+            diccionario[i].conteo++;
+            return;
+        }
+    }
+
+    if (numPalabras < MAX_PALABRAS) {
+        strcpy(diccionario[numPalabras].palabra, palabra);
+        diccionario[numPalabras].conteo = 1;
+        numPalabras++;
+    }
+}
+
+void mostrarTop10Palabras() {
+    if (numPalabras == 0) {
+        printf("No hay palabras registradas.\n");
+        return;
+    }
+
+    // Ordenar el diccionario en orden descendente por conteo utilizando el algoritmo de selección
+    for (int i = 0; i < numPalabras - 1; i++) {
+        int maxIndex = i;
+        for (int j = i + 1; j < numPalabras; j++) {
+            if (diccionario[j].conteo > diccionario[maxIndex].conteo) {
+                maxIndex = j;
+            }
+        }
+
+        if (maxIndex != i) {
+            EntradaDiccionario temp = diccionario[i];
+            diccionario[i] = diccionario[maxIndex];
+            diccionario[maxIndex] = temp;
+        }
+    }
+
+    printf("Top 10 palabras mas usadas:\n");
+    for (int i = 0; i < numPalabras && i < 10; i++) {
+        printf("%d. %s (%d veces)\n", i + 1, diccionario[i].palabra, diccionario[i].conteo);
+    }
+}
+
 
 

@@ -4,6 +4,7 @@
 #define MAX_LENGTH 50
 #define MAX_USUARIO 15
 #define MAX_PUB 120
+#define MAX_PALABRAS 120
 
 typedef struct { //estructura que define las preferencias de un usuario
     char pref1[MAX_LENGTH];
@@ -17,7 +18,13 @@ typedef struct publicacion {
     char pub[MAX_PUB];
     struct publicacion* siguiente;
 } publicacion;
+typedef struct {
+    char palabra[MAX_LENGTH];
+    int conteo;
+} EntradaDiccionario;
 
+EntradaDiccionario diccionario[MAX_PUB];
+int numPalabras = 0;
 
 typedef struct {//Estructura de solicitudes de amistad
     char name_sol[MAX_USUARIO];
@@ -54,4 +61,11 @@ void leer_file(List_Users** l);
 void liberar_memoria(List_Users *l);
 void realizar_publicacion(usuario* user, const char* texto);
 void mostrarHistorial(usuario* user);
+void mostrarTop10Palabras();
+void agregarPalabraDiccionario(char* palabra);
+void inicializarDiccionario();
+void insertarSolicitud(usuario* user, char nombre[MAX_USUARIO]);
+void mostrarAmistades(usuario* user);
+void enviarSolicitud(List_Users* l, usuario* user);
+void procesarSolicitudesPendientes(usuario* user);
 #endif //EDA_II_RED_SOCIAL_USERS_H

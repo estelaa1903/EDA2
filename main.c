@@ -23,12 +23,15 @@ int main() {
         else if(option==4){
             op_usuario(lista);
         }
-        else if(option==5){//salir, borra la memoria dinamica assignada y cualquier cosa abierta.
+        else if(option==5){//muestra el top10 de palabras mas usadas en las publicaciones
+            mostrarTop10Palabras();
+        }
+        else if(option==6) {//salir, borra la memoria dinamica assignada y cualquier cosa abierta.
             liberar_memoria(lista);
             printf("Saliste del programa");
         }
         else{
             printf("Opcion invalida");
         }
-    } while (option!=5);
+    } while (option!=6);
 }

@@ -56,10 +56,10 @@ RM = "C:\Program Files\JetBrains\CLion 2022.3.1\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\alexs\CLionProjects\EDA2
+CMAKE_SOURCE_DIR = C:\Users\marc_\CLionProjects\EDA2_2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\alexs\CLionProjects\EDA2\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\marc_\CLionProjects\EDA2_2\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\alexs\CLionProjects\EDA2\cmake-build-debug\CMakeFiles C:\Users\alexs\CLionProjects\EDA2\cmake-build-debug\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\marc_\CLionProjects\EDA2_2\cmake-build-debug\CMakeFiles C:\Users\marc_\CLionProjects\EDA2_2\cmake-build-debug\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\alexs\CLionProjects\EDA2\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\marc_\CLionProjects\EDA2_2\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -127,30 +127,6 @@ EDA2: cmake_check_build_system
 EDA2/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\EDA2.dir\build.make CMakeFiles/EDA2.dir/build
 .PHONY : EDA2/fast
-
-gest_users.obj: gest_users.c.obj
-.PHONY : gest_users.obj
-
-# target to build an object file
-gest_users.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\EDA2.dir\build.make CMakeFiles/EDA2.dir/gest_users.c.obj
-.PHONY : gest_users.c.obj
-
-gest_users.i: gest_users.c.i
-.PHONY : gest_users.i
-
-# target to preprocess a source file
-gest_users.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\EDA2.dir\build.make CMakeFiles/EDA2.dir/gest_users.c.i
-.PHONY : gest_users.c.i
-
-gest_users.s: gest_users.c.s
-.PHONY : gest_users.s
-
-# target to generate assembly for a file
-gest_users.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\EDA2.dir\build.make CMakeFiles/EDA2.dir/gest_users.c.s
-.PHONY : gest_users.c.s
 
 main.obj: main.c.obj
 .PHONY : main.obj
@@ -233,9 +209,6 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... EDA2
-	@echo ... gest_users.obj
-	@echo ... gest_users.i
-	@echo ... gest_users.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
