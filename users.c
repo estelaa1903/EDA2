@@ -396,20 +396,15 @@ void mostrarTop10Palabras() {
         return;
     }
 
-    // Ordenar el diccionario en orden descendente por conteo utilizando el algoritmo de selección
-    for (int i = 0; i < numPalabras - 1; i++) {
-        int maxIndex = i;
-        for (int j = i + 1; j < numPalabras; j++) {
-            if (diccionario[j].conteo > diccionario[maxIndex].conteo) {
-                maxIndex = j;
-            }
+    // Ordenar el diccionario en orden descendente por conteo utilizando el algoritmo de inserción
+    for (int i = 1; i < numPalabras; i++) {
+        EntradaDiccionario temp = diccionario[i];
+        int j = i - 1;
+        while (j >= 0 && diccionario[j].conteo < temp.conteo) {
+            diccionario[j + 1] = diccionario[j];
+            j--;
         }
-
-        if (maxIndex != i) {
-            EntradaDiccionario temp = diccionario[i];
-            diccionario[i] = diccionario[maxIndex];
-            diccionario[maxIndex] = temp;
-        }
+        diccionario[j + 1] = temp;
     }
 
     printf("Top 10 palabras mas usadas:\n");

@@ -4,6 +4,7 @@
 
 int main() {
     List_Users *lista = NULL;
+    inicializarDiccionario();
     int option;
     do {
         show_menu();
