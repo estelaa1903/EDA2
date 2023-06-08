@@ -16,7 +16,7 @@ int main() {
         else if(option==2){//Mostrar en pantalla los usuarios registrados
             leer_file(&lista);
         }
-        else if(option==3){// Operar como usuario.
+        else if(option==3){// Operar como usuario
             listar(lista);
         }
         else if(option==4){
