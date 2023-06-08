@@ -43,7 +43,7 @@ OBJETIVOS DEL PROYECTO [Aprox. 2500 palabras]
 En esta sección se deben cubrir los objetivos alcanzados en el proyecto. Cada objetivo presentado en las siguientes subsecciones debe cubrir los siguientes elementos:
 Descripción general: Describir cómo se ha implementado. Más allá de lo que se le proporcionó en el documento de orientación, indique las características principales de las estructuras de datos y los algoritmos implementados para lograr este objetivo y su comportamiento. 
 Debería incluir:
-
+Explicar todas las fucnciones y como funcionan especificando las variables y las estructuras de datos
 ¿Qué variables se utilizaron y con qué propósito?
 
 ¿Cuáles fueron las estructuras de datos elegidas para este objetivo? ¿Para que se utilizó?
@@ -84,6 +84,8 @@ Esta subsección debe incluir una descripción de los conjuntos de datos utiliza
 REFERENCIAS
 Esta sección debe incluir las referencias utilizadas en el informe. Estas referencias incluyen cualquier sitio web, material de lectura, publicaciones o libros utilizados como inspiración.
 
+cosas para comentar.
 
+error de diccionario, control de errors de seleccion del menu, error con el fichero, error de punteros y mal inicializacion de variables, error en mostar historial programa deja de funcionar
 
 
