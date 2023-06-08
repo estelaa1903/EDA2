@@ -6,7 +6,6 @@
 #include "gest_users.h"
 
 int encontrado;
-
 void new_usuario(List_Users** l) {
     usuario user;
     char usu[MAX_USUARIO], larg[MAX_LENGTH];
@@ -342,6 +341,7 @@ void realizar_publicacion(usuario* user, const char* texto) {
     // Insertar la nueva publicación al inicio de la lista de publicaciones
     nueva_publicacion->siguiente = user->publicaciones;
     user->publicaciones = nueva_publicacion;
+    user->num_pub++;
 }
 
 void mostrarHistorial(usuario* user) {
@@ -349,14 +349,15 @@ void mostrarHistorial(usuario* user) {
         printf("No has realizado ninguna publicacion.\n");
         return;
     }
-
-    printf("Historial de publicaciones:\n");
-    publicacion* current = user->publicaciones;
-    int count = 1;
-    while (current != NULL) {
-        printf("%d. %s\n", count, current->pub);
-        current = current->siguiente;
-        count++;
+    else{
+        printf("Historial de publicaciones:\n");
+        publicacion* current = user->publicaciones;
+        int count = 1;
+            while (current != NULL) {
+                printf("%d. %s\n", count, current->pub);
+                current = current->siguiente;
+                count++;
+            }
     }
 }
 

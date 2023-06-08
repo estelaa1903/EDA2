@@ -19,7 +19,7 @@ Información sobre TÍTULO DE PROYECTO
 
 Alex Alastuey Centeno, Estela Callejón Molina, Marc Cano Lafarga
 
-NIA: 268167, 266667, _____
+NIA: 268167, 266667, 269701
 
 11 de junio 2023
 
@@ -83,6 +83,7 @@ Esta subsección debe incluir una descripción de los conjuntos de datos utiliza
 
 REFERENCIAS
 Esta sección debe incluir las referencias utilizadas en el informe. Estas referencias incluyen cualquier sitio web, material de lectura, publicaciones o libros utilizados como inspiración.
+
 
 
 

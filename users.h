@@ -27,15 +27,15 @@ typedef struct {//Estructura de solicitudes de amistad
 
 typedef struct List_Users List_Users;
 typedef struct usuario {
-    char nombre[MAX_USUARIO];
+    char nombre[MAX_USUARIO];//nickname
     int edad;
     char correo[MAX_LENGTH];
-    char ubi[MAX_LENGTH];
-    gustos pref;
-    //solicitudes aceptadas
+    char ubi[MAX_LENGTH];//ciudad donde vive el usuario
+    int num_pub; //numero de publicaciones realizadas por el usuario
+    gustos pref;//sus 5 gustos
     Node* cola_solicitudes;  // Cola de solicitudes de amistad
-    List_Users*amigos;
-    publicacion* publicaciones;
+    List_Users*amigos;//solicitudes aceptadas
+    publicacion* publicaciones; //cola de publicaciones
 
 } usuario;
 
