@@ -30,7 +30,7 @@ int main() {
             printf("Saliste del programa");
         }
         else{
-            printf("Opcion invalida");
+            printf("\nOpcion invalida");
         }
     } while (option!=6);
 }
