@@ -7,7 +7,8 @@ void show_menu(){
     printf("2. Insertar usuarios por un fichero \n");
     printf("3. Listar usuarios \n");
     printf("4. Operar como usuario \n");
-    printf("5. Salir \n");
+    printf("5. Top10 palabras mas usadas en las publicaciones \n");
+    printf("6. Salir \n");
     printf("-----------------------------------------\n");
 
 }
