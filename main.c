@@ -22,7 +22,7 @@ int main() {
         else if(option==4){
             op_usuario(lista);
         }
-        else if(option==5){//muestra el top10 de palabras mas usadas en las publicaciones
+        else if(option==5){//muestra el top10 de palabras mas usadas en las publicaciones.
             mostrarTop10Palabras();
         }
         else if(option==6) {//salir, borra la memoria dinamica assignada y cualquier cosa abierta.
