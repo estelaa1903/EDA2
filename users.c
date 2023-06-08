@@ -4,7 +4,7 @@
 #include "users.h"
 #include "menu.h"
 
-EntradaDiccionario diccionario[10];
+EntradaDiccionario diccionario[100]; //Max palabras que pueden haber en las ppublicaciones
 int numPalabras = 0;
 int encontrado;
 void new_usuario(List_Users** l) {
