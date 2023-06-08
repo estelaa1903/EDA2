@@ -118,9 +118,11 @@ void op_usuario(List_Users* l) {
             }
             else if (option1 == 5) { //Mostrar amigos
                 mostrarAmistades(select_user);
+            }else if (option1 == 6) { //Ir al menu principal
+               printf("Volviendo al menu principal... \n");
             }
             else{
-                printf("Opcion Invalida");
+                printf("Opcion Invalida\n");
             }
         } while (option1 != 6);
     } else {
