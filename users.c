@@ -4,7 +4,8 @@
 #include "users.h"
 #include "menu.h"
 
-
+EntradaDiccionario diccionario[10];
+int numPalabras = 0;
 int encontrado;
 void new_usuario(List_Users** l) {
     usuario user;
@@ -250,11 +251,6 @@ int aceptarSolicitud(usuario* user, char nombre[MAX_USUARIO]) {
                         amigoTemp = amigoTemp->next;
                     }
 
-                    if (strcmp(amigoTemp->user.nombre, nombre) == 0) {
-                        printf("Ya eres amigo de %s.\n", nombre);
-                        return 0;
-                    }
-
                     List_Users* nuevoAmigo = malloc(sizeof(List_Users));
                     strcpy(nuevoAmigo->user.nombre, nombre);
                     nuevoAmigo->next = NULL;
@@ -371,10 +367,9 @@ void mostrarHistorial(usuario* user) {
                 count++;
             }
     }
-    void show_submenu();
 }
 void inicializarDiccionario() {
-    for (int i = 0; i < MAX_PALABRAS; i++) {
+    for (int i = 0; i < 10; i++) {
         strcpy(diccionario[i].palabra, "");
         diccionario[i].conteo = 0;
     }

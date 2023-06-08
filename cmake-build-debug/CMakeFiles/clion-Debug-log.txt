@@ -1,4 +1,4 @@
-"C:\Program Files\JetBrains\CLion 2022.3.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" -S C:\Users\marc_\CLionProjects\EDA2_2 -B C:\Users\marc_\CLionProjects\EDA2_2\cmake-build-debug
+"C:\Program Files\JetBrains\CLion 2022.3.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" -S C:\Users\alexs\CLionProjects\EDA2 -B C:\Users\alexs\CLionProjects\EDA2\cmake-build-debug
 -- Configuring done
 -- Generating done
--- Build files have been written to: C:/Users/marc_/CLionProjects/EDA2_2/cmake-build-debug
+-- Build files have been written to: C:/Users/alexs/CLionProjects/EDA2/cmake-build-debug
