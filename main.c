@@ -13,7 +13,7 @@ int main() {
         if(option==1){//Insertar nuevo usuario
             new_usuario(&lista);
         }
-        else if(option==2){//Mostrar en pantalla los usuarios registrados.
+        else if(option==2){//Mostrar en pantalla los usuarios registrados
             leer_file(&lista);
         }
         else if(option==3){// Operar como usuario.
