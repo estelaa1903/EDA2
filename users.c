@@ -416,4 +416,4 @@ void mostrarTop10Palabras() {
     }
 }
 
-//marc.
+//alex

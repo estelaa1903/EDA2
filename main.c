@@ -13,12 +13,13 @@ int main() {
         if(option==1){//Insertar nuevo usuario
             new_usuario(&lista);
         }
-        else if(option==2){//Mostrar en pantalla los usuarios registrados
+        else if(option==2){//insertar usuarios por fichero
             leer_file(&lista);
         }
-        else if(option==3){// Operar como usuario.
+        else if(option==3){//listar usuarios
+            listar(lista);
         }
-        else if(option==4){
+        else if(option==4){//operar usuario
             op_usuario(lista);
         }
         else if(option==5){//muestra el top10 de palabras mas usadas en las publicaciones.
