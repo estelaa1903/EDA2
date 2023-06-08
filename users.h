@@ -18,13 +18,11 @@ typedef struct publicacion {
     char pub[MAX_PUB];
     struct publicacion* siguiente;
 } publicacion;
+
 typedef struct {
     char palabra[MAX_LENGTH];
     int conteo;
 } EntradaDiccionario;
-
-EntradaDiccionario diccionario[MAX_PUB];
-int numPalabras = 0;
 
 typedef struct {//Estructura de solicitudes de amistad
     char name_sol[MAX_USUARIO];
