@@ -1,12 +1,10 @@
 #include <stdio.h>
-#include<conio.h>
 #include "users.h"
 #include "menu.h"
-#include "main.h"
-
 
 int main() {
     List_Users *lista = NULL;
+    inicializarDiccionario();
     int option;
     do {
         show_menu();
@@ -15,16 +13,16 @@ int main() {
         if(option==1){//Insertar nuevo usuario
             new_usuario(&lista);
         }
-        else if(option==2){//Mostrar en pantalla los usuarios registrados
+        else if(option==2){//insertar usuarios por fichero
             leer_file(&lista);
         }
-        else if(option==3){// Operar como usuario
+        else if(option==3){//listar usuarios
             listar(lista);
         }
-        else if(option==4){
+        else if(option==4){//operar usuario
             op_usuario(lista);
         }
-        else if(option==5){//muestra el top10 de palabras mas usadas en las publicaciones
+        else if(option==5){//muestra el top10 de palabras mas usadas en las publicaciones.
             mostrarTop10Palabras();
         }
         else if(option==6) {//salir, borra la memoria dinamica assignada y cualquier cosa abierta.
@@ -32,7 +30,7 @@ int main() {
             printf("Saliste del programa");
         }
         else{
-            printf("Opcion invalida");
+            printf("\nOpcion invalida");
         }
     } while (option!=6);
 }

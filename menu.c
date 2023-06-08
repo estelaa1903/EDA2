@@ -1,7 +1,5 @@
 #include<stdio.h>
 #include "menu.h"
-#include "main.h"
-#include "users.h"
 
 void show_menu(){
     printf("-----------------------------------------\n");

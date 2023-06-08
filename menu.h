@@ -4,7 +4,8 @@
 
 #ifndef EDA2_MENU_H
 #define EDA2_MENU_H
-
+#include "stdio.h"
+#include "users.h"
 void show_menu();
 void show_submenu();
 
