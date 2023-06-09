@@ -10,7 +10,7 @@ int main() {
     printf("%c   %c  %c   %c  %c   \n",177,177,177,177,177);
     printf("%c   %c  %c%c%c%c%c  %c%c%c%c   \n",177,177,177,177,177,177,177,177,177,177,177);
     printf("%c%c%c%c%c  %c      %c   \n",177,177,177,177,177,177,177);
-    printf("\nBIENVENIDO A LA RED UNIVERSITARIA\n\n");
+    printf("\nBIENVENIDOS A UNICONNECT\n\n");
     printf("Esta red ha sido creada con fines academicos\n");
     printf("Haced publicaciones para informar a los demas estudiantes sobre\n");
     printf("fechas de examenes,informacion importante sobre el curso, hacer preguntas...\n");
