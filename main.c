@@ -6,6 +6,16 @@ int main() {
     List_Users *lista = NULL;
     inicializarDiccionario();
     int option;
+    printf("%c   %c  %c%c%c%c%c  %c%c%c%c%c\n",177,177,177,177,177,177,177,177,177,177,177,177);
+    printf("%c   %c  %c   %c  %c   \n",177,177,177,177,177);
+    printf("%c   %c  %c%c%c%c%c  %c%c%c%c   \n",177,177,177,177,177,177,177,177,177,177,177);
+    printf("%c%c%c%c%c  %c      %c   \n",177,177,177,177,177,177,177);
+    printf("\nBIENVENIDO A LA RED UNIVERSITARIA\n\n");
+    printf("Esta red ha sido creada con fines academicos\n");
+    printf("Haced publicaciones para informar a los demas estudiantes sobre\n");
+    printf("fechas de examenes,informacion importante sobre el curso, hacer preguntas...\n");
+
+    printf("\n             COMPARTID VUESTRA SABIDURIA!\n");
     do {
         show_menu();
         printf("Selecciona una opcion:");
@@ -27,7 +37,7 @@ int main() {
         }
         else if(option==6) {//salir, borra la memoria dinamica assignada y cualquier cosa abierta.
             liberar_memoria(lista);
-            printf("Saliste del programa");
+            printf("\nSaliste del programa");
         }
         else{
             printf("\nOpcion invalida");

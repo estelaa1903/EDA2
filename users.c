@@ -15,7 +15,7 @@ void new_usuario(List_Users** l) {
         scanf("%s", usu);
         busqueda(*l,usu);
         if (encontrado==1){
-            printf("El usuario introducido ya es existente.\n");
+            printf("\nEl usuario introducido ya es existente.\n");
         }
         else{
             strcpy(user.nombre, usu);
@@ -73,7 +73,7 @@ void new_usuario(List_Users** l) {
 
 void listar(List_Users* l) {
     if (l == NULL) {
-        printf("No hay usuarios para listar\n");
+        printf("\nNo hay usuarios para listar\n");
         return;
     } else {
         List_Users* current = l;
@@ -87,7 +87,7 @@ void listar(List_Users* l) {
 void op_usuario(List_Users* l) {
     char nombre_usuario[MAX_USUARIO];
     usuario* select_user;
-    printf("Ingresa el nombre del usuario:  ");
+    printf("Ingresa el nombre del usuario:");
     scanf("%s", nombre_usuario);
     select_user = busqueda(l, nombre_usuario);
     if (encontrado == 1) {
@@ -106,7 +106,7 @@ void op_usuario(List_Users* l) {
             }
             else if (option1 == 3) {//realizar publicacion.
                 char texto[MAX_PUB];
-                printf("Ingresa el texto de la publicacion (max. 120 caracteres): ");
+                printf("Ingresa el texto de la publicacion (Max. 120 caracteres): ");
                 scanf(" %[^\n]", texto);
                 realizar_publicacion(select_user, texto);
                 printf("Publicacion realizada con exito.\n");
@@ -118,13 +118,15 @@ void op_usuario(List_Users* l) {
             }
             else if (option1 == 5) { //Mostrar amigos
                 mostrarAmistades(select_user);
-            }else if (option1 == 6) { //Ir al menu principal
+            }else if (option1 == 6) { //añadir fecha de exam
+               menuexam();
+            }else if (option1 == 7) { //Ir al menu principal
                printf("Volviendo al menu principal... \n");
             }
             else{
                 printf("Opcion Invalida\n");
             }
-        } while (option1 != 6);
+        } while (option1 != 7);
     } else {
         printf("Usuario no encontrado\n");
     }
@@ -417,4 +419,65 @@ void mostrarTop10Palabras() {
         printf("%d. %s (%d veces)\n", i + 1, diccionario[i].palabra, diccionario[i].conteo);
     }
 }
+void guardarExamen(examen e[], int *indice) {
+    if (*indice < 30) {
+        printf("Ingrese el nombre de la asignatura: ");
+        scanf("%s", e[*indice].asignatura);
 
+        printf("Ingrese el dia del examen: ");
+        scanf("%d", &e[*indice].diaexam.dia);
+
+        printf("Ingrese el mes del examen: ");
+        scanf("%d", &e[*indice].diaexam.mes);
+
+        printf("\nExamen guardado correctamente.\n");
+
+        (*indice)++;
+    } else {
+        printf("No se pueden agregar mas examenes. El limite ha sido alcanzado.\n");
+    }
+}
+
+void mostrarExamenes(examen e[], int indice) {
+    printf("----- Examenes guardados -----\n");
+    if (indice == 0) {
+        printf("No hay examenes registrados.\n");
+    } else {
+        for (int i = 0; i < indice; i++) {
+            printf("Asignatura: %s\n", e[i].asignatura);
+            printf("Fecha del examen: %d/%d\n", e[i].diaexam.dia, e[i].diaexam.mes);
+            printf("\n");
+        }
+    }
+    printf("------------------------------\n");
+}
+
+void menuexam() {
+    examen e[30];  // Vector de exámenes
+
+    int opcion, indice = 0;
+
+    do {
+        printf("1. Guardar examen\n");
+        printf("2. Mostrar examenes\n");
+        printf("3. Salir\n");
+        printf("Seleccione una opcion: ");
+        scanf("%d", &opcion);
+
+        switch (opcion) {
+            case 1:
+                guardarExamen(e, &indice);
+                break;
+            case 2:
+                mostrarExamenes(e, indice);
+                break;
+            case 3:
+                printf("Volviendo al submenu.\n");
+                break;
+            default:
+                printf("Opción invalida. Por favor, seleccione una opcion valida.\n");
+                break;
+        }
+        printf("\n");
+    } while (opcion != 3);
+}

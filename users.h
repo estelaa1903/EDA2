@@ -50,7 +50,14 @@ typedef struct List_Users { //Lista de usuarios
     struct List_Users* next;
     int total_users;
 } List_Users;
-
+typedef struct {
+    int dia;
+    int mes;
+}fecha;
+typedef struct {
+    char asignatura[20];
+    fecha diaexam;
+}examen;
 void new_usuario(List_Users** l);
 void listar(List_Users* l);
 void op_usuario(List_Users* l);
@@ -66,4 +73,7 @@ void insertarSolicitud(usuario* user, char nombre[MAX_USUARIO]);
 void mostrarAmistades(usuario* user);
 void enviarSolicitud(List_Users* l, usuario* user);
 void procesarSolicitudesPendientes(usuario* user);
+void menuexam();
+void guardarExamen(examen e[], int *indice);
+void mostrarExamenes(examen e[], int indice);
 #endif //EDA_II_RED_SOCIAL_USERS_H
