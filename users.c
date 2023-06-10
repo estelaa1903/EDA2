@@ -475,7 +475,7 @@ void menuexam() {
                 printf("Volviendo al submenu.\n");
                 break;
             default:
-                printf("Opción invalida. Por favor, seleccione una opcion valida.\n");
+                printf("Opcion invalida. Por favor, seleccione una opcion valida.\n");
                 break;
         }
         printf("\n");
