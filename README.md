@@ -101,7 +101,7 @@ La función "op_usuario" permite a un usuario interactuar con un sistema mediant
 
 ### Funciones submenu
 
-La función show_submenu muestra un submenú con varias opciones para que el usuario elija. Aquí está la descripción de cada opción:
+Al seleccionar la opción de operar como usuario te muestra un submenu en pantalla como hemos dicho anteriormente, cada opción del submenu se han desarrollado de la siguiente forma.
 
 **Enviar solicitud de amistad** 
 
@@ -182,67 +182,21 @@ el diccionario comparando las palabras. En el caso que esa palabra exista suma e
 utilizando una variable global int numPalabras, luego sume en uno dicha variable y sale de la función.
 
 
-**Funciones examen**
+**Agenda de exámenes**
+
+Esta opción te muestra un otro menu que contiene las opciones: guardar exámenes, mostrar exámenes y salir además incluye una variable local índice. A continuación se explicará cada función,
+pero primero hay una estructura examen que contiene el nombre de la assignatura y otra estructura fecha que contiene el día y el mes, de esta forma se puede guardar la información del examen
+La opción de guardar examen llama a una función con el mismo nombre, permite guardar hasta un total de 30 exámenes como máximo pidiendo al usuario los datos del examen expuestos anteriormente.
+Si supera el límite de exámenes guardados en pantalla saldrá un mensaje de que has alcanzado el máximo; cuando se guarda el examen se incremente en 1 el índice que indica cuantos exámenes 
+han sido registrados. La opción mostrar exámenes llama a la función mostrarexamenes que muestra todos los exámenes añadidos con su respectiva fecha, mediante un loop for teniendo en cuenta
+el índice. La opción de exámenes es una función adicional que hemos querido añadir a nuestra red, funciona correctamente pero al cerrar sesión como usuario, no se guardan los exámenes 
+añadidos. Para mejorar este apartado se podría modificar el código de tal manera que se mantenga la información al salir de la sesión de un usuario.
 
 
 **Volver al menu principal**
 
 Esta opción permite al usuario regresar al menú principal. Cuando el usuario selecciona esta opción se sale del bucle y retorna al menú principal.
 
-PLANTILLA DE MEMORIA DE PROYECTO [Máximo 5000 palabras en total]
-LISTA DE CONTENIDOS [Incluir todas las secciones que se detallan a continuación]
 
-INTRODUCCIÓN [Aprox.  250 palabras]
-En esta sección se debe describir el contexto, la definición del problema, las soluciones existentes que habéis revisado en busca de inspiración, su propuesta y los objetivos alcanzados.
-
-Nuestro objetivo para este proyecto 
-OBJETIVOS DEL PROYECTO [Aprox. 2500 palabras]
-En esta sección se deben cubrir los objetivos alcanzados en el proyecto. Cada objetivo presentado en las siguientes subsecciones debe cubrir los siguientes elementos:
-Descripción general: Describir cómo se ha implementado. Más allá de lo que se le proporcionó en el documento de orientación, indique las características principales de las estructuras de datos y los algoritmos implementados para lograr este objetivo y su comportamiento. 
-Debería incluir:
-Explicar todas las fucnciones y como funcionan especificando las variables y las estructuras de datos
-¿Qué variables se utilizaron y con qué propósito?
-
-¿Cuáles fueron las estructuras de datos elegidas para este objetivo? ¿Para que se utilizó?
-
-¿Cuál fue el algoritmo elegido para este objetivo? ¿Cuál es su comportamiento esperado? 
-
-¿Qué limitaciones tiene el algoritmo? ¿Cómo pasó en su implementación?
-¿Qué se puede mejorar?
-
-Tiempo: Tiempo necesario para desarrollar este objetivo
-
-Ubicación: a qué línea de código y en qué archivo se encuentra esta implementación.
-
-Objetivos obligatorios alcanzados:
-
-Esta subsección debe describir qué objetivos obligatorios se han implementado en el proyecto siguiendo la estructura y los elementos presentados anteriormente.
-
-Objetivos deseables alcanzados:
-
-Esta subsección debe describir qué objetivos deseables se han implementado en el proyecto siguiendo la estructura y los elementos presentados anteriormente.
-
-Objetivos exploratorios adquiridos:
-
-Esta subsección debe describir qué objetivos exploratorios se han implementado en el proyecto siguiendo la estructura y los elementos presentados anteriormente.
-
-SOLUCIÓN [Aprox. 1500 palabras]
-Esta sección debe profundizar en la solución desarrollada para este proyecto.
-Arquitectura del sistema [Aprox. 750 palabras]
-Esta subsección debe incluir al menos un diagrama de la arquitectura del sistema y una descripción de los bloques principales y su funcionalidad.
-
-Gestión de errores [Aprox. 250 palabras]
-Esta subsección debe describir cómo se manejaron los errores en el proyecto y su razonamiento.
-Diseño del modelo de datos [Aprox. 250 palabras]
-Esta subsección debe incluir al menos un diagrama de flujo de datos de la solución y su descripción.
-Descripción y procesamiento del conjunto de datos [Aprox. 250 words]
-Esta subsección debe incluir una descripción de los conjuntos de datos utilizados, cómo se leyeron y procesaron.
-
-REFERENCIAS
-Esta sección debe incluir las referencias utilizadas en el informe. Estas referencias incluyen cualquier sitio web, material de lectura, publicaciones o libros utilizados como inspiración.
-
-cosas para comentar.
-
-error de diccionario, control de errors de seleccion del menu, error con el fichero, error de punteros y mal inicializacion de variables, error en mostar historial programa deja de funcionar
 
 
