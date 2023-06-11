@@ -175,7 +175,8 @@ Imprime el nombre del amigo contenido en el nodo actual (temp->user.nombre).
 Avanza al siguiente nodo de la lista (temp = temp->next).
 
 
-**Funciones Diccionario** 
+**Funciones Diccionario**
+
 Para el diccionario mencionado anteriormente en mostrarTop10Palabras, necesitamos implementar dos funciones para que sea funcional, dichas funciones són la de inicializarDiccionario(), que 
 se encarga de crear el diccionario inicializandolo con espacios y el conteo a 0; la otra función es la de agregarPalabraDiccionario() que utiliza un bucle para buscar de manera sequencial
 el diccionario comparando las palabras. En el caso que esa palabra exista suma en 1 la variable conteo y sale de la función, si no existe guarda la palabra en la última posicion del array
@@ -197,6 +198,11 @@ añadidos. Para mejorar este apartado se podría modificar el código de tal man
 
 Esta opción permite al usuario regresar al menú principal. Cuando el usuario selecciona esta opción se sale del bucle y retorna al menú principal.
 
+## **Conclusion**
+
+Así sería el funcionamiento de nuestra red social UNICONNECT, hay aspectos que se podrían mejorar como por ejemplo control
+de errores y quizás minimizar el uso de memoria para que esté más optimizado, aún teniendo en cuenta lo anterior, la 
+aplicación funciona correctamente y contiene los objetivos deseables pedidos más añadidos, ahora solo queda disfrutarla
 
 
 
