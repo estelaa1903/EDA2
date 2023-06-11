@@ -19,7 +19,7 @@ NIA: 268167, 266667, 269701
 # MEMORIA DEL PROYECTO UNICONNECT
 
 ## INTRODUCCIÓN
-(LO TENGO QUE CAMBIAR)
+
 El objetivo para este proyecto es crear una red social para estudiantes donde se puedan realizar publicaciones(es decir escritos) relacionados con el ámbito académico. 
 Para poder realizar este sistema, se necesita una list_Users que consiste una estructura, donde incluye los datos de cada usuario y un puntero al siguiente usuario. 
 Esta lista debera de estar declarada como variable global en la función main para qu eno se eliminen los usuarios introducidos durante la ejecución del programa. 
