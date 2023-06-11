@@ -3,8 +3,8 @@
 #include "menu.h"
 
 int main() {
-    List_Users *lista = NULL;
-    inicializarDiccionario();
+    List_Users *lista = NULL;// Inicializar la lista de usuarios
+    inicializarDiccionario(); //llamada a la función para inicializar el diccionario
     int option;
     printf("%c   %c  %c%c%c%c%c  %c%c%c%c%c\n",177,177,177,177,177,177,177,177,177,177,177,177);
     printf("%c   %c  %c   %c  %c   \n",177,177,177,177,177);
@@ -32,7 +32,7 @@ int main() {
         else if(option==4){//operar usuario
             op_usuario(lista);
         }
-        else if(option==5){//muestra el top10 de palabras mas usadas en las publicaciones.
+        else if(option==5){//muestra el top10 de palabras más usadas en las publicaciones.
             mostrarTop10Palabras();
         }
         else if(option==6) {//salir, borra la memoria dinamica assignada y cualquier cosa abierta.

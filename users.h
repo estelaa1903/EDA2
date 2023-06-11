@@ -29,8 +29,8 @@ typedef struct {//Estructura de solicitudes de amistad
     struct Node* siguiente;
 } Node;
 
-
 typedef struct List_Users List_Users;
+
 typedef struct usuario {
     char nombre[MAX_USUARIO];//nickname
     int edad;
@@ -50,14 +50,17 @@ typedef struct List_Users { //Lista de usuarios
     struct List_Users* next;
     int total_users;
 } List_Users;
+
 typedef struct {
     int dia;
     int mes;
 }fecha;
+
 typedef struct {
     char asignatura[20];
     fecha diaexam;
 }examen;
+
 void new_usuario(List_Users** l);
 void listar(List_Users* l);
 void op_usuario(List_Users* l);
