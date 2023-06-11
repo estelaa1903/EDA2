@@ -17,7 +17,7 @@ NIA: 268167, 266667, 269701
 11 de junio 2023
 
 # MEMORIA DEL PROYECTO UNICONNECT
-
+Link del video: https://clipchamp.com/watch/bwZiIGFOeLx
 ## INTRODUCCIÓN
 
 El objetivo para este proyecto es crear una red social para estudiantes donde se puedan realizar publicaciones(es decir escritos) relacionados con el ámbito académico. 
